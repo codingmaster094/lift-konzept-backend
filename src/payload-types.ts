@@ -492,6 +492,34 @@ export interface Home {
         }[]
       | null;
   };
+  Experience?: {
+    experiance_image1?: (string | null) | Media;
+    experiance_image2?: (string | null) | Media;
+    Heading?: string | null;
+    SubHeading?: string | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    experiance?:
+      | {
+          experianceImage?: (string | null) | Media;
+          title?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
   publishedAt?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -659,6 +687,22 @@ export interface HomeSelect<T extends boolean = true> {
           | {
               logoImage?: T;
               url?: T;
+              id?: T;
+            };
+      };
+  Experience?:
+    | T
+    | {
+        experiance_image1?: T;
+        experiance_image2?: T;
+        Heading?: T;
+        SubHeading?: T;
+        richText?: T;
+        experiance?:
+          | T
+          | {
+              experianceImage?: T;
+              title?: T;
               id?: T;
             };
       };

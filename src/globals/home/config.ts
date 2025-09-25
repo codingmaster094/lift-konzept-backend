@@ -3,6 +3,7 @@ import { revalidateHome } from './hooks/revalidateHome'
 import slugify from 'slugify'
 import { Hero } from '@/app/components/Hero/config'
 import { CompanyLogo } from '@/app/components/comapntLogos/config'
+import Experience from '@/app/components/Experiance/config'
 
 export const HomePage: GlobalConfig = {
   slug: 'home',
@@ -62,6 +63,13 @@ export const HomePage: GlobalConfig = {
             de: '',
           },
           fields: [CompanyLogo],
+        },
+        {
+          label: {
+            en: 'Experience',
+            de: '',
+          },
+          fields: [Experience],
         },
       ],
     },
