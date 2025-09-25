@@ -5,6 +5,7 @@ import { Hero } from '@/app/components/Hero/config'
 import { CompanyLogo } from '@/app/components/comapntLogos/config'
 import Experience from '@/app/components/Experiance/config'
 import VideoSection from '@/app/components/VideoSection/config'
+import VorteileSection from '@/app/components/VorteileSection/config'
 
 export const HomePage: GlobalConfig = {
   slug: 'home',
@@ -78,6 +79,13 @@ export const HomePage: GlobalConfig = {
             de: '',
           },
           fields: [VideoSection],
+        },
+        {
+          label: {
+            en: 'VorteileSection',
+            de: '',
+          },
+          fields: [VorteileSection],
         },
       ],
     },
