@@ -521,6 +521,7 @@ export interface Home {
       | null;
   };
   VideoSection?: {
+    thumbnalImage?: (string | null) | Media;
     video?: (string | null) | Media;
     Heading?: string | null;
     richText?: {
@@ -728,6 +729,7 @@ export interface HomeSelect<T extends boolean = true> {
   VideoSection?:
     | T
     | {
+        thumbnalImage?: T;
         video?: T;
         Heading?: T;
         richText?: T;

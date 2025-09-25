@@ -15,6 +15,16 @@ export const VideoSection: Field = {
     de: '',
   },
   fields: [
+     {
+      name: 'thumbnalImage',
+      type: 'upload',
+      label: {
+        en: 'thumbnal Image',
+        de: '',
+      },
+      relationTo: 'media',
+      required: false,
+    },
     {
       name: 'video',
       type: 'upload',
