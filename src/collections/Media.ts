@@ -11,7 +11,11 @@ export const Media: CollectionConfig = {
   access: {
     read: () => true,
   },
-  upload: true,
+  upload: {
+    staticDir: 'media', // where files are stored
+    mimeTypes: ['image/*', 'video/*'], // allow images + videos
+    fileSizeLimit: 200 * 1024 * 1024, // 200MB (adjust as needed)
+  },
   fields: [
     {
       name: 'title',
@@ -22,6 +26,6 @@ export const Media: CollectionConfig = {
       name: 'alt',
       type: 'text',
       required: true,
-    }
-  ]
+    },
+  ],
 }
