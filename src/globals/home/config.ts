@@ -2,6 +2,7 @@ import type { GlobalConfig } from 'payload'
 import { revalidateHome } from './hooks/revalidateHome'
 import slugify from 'slugify'
 import { Hero } from '@/app/components/Hero/config'
+import { CompanyLogo } from '@/app/components/comapntLogos/config'
 
 export const HomePage: GlobalConfig = {
   slug: 'home',
@@ -54,6 +55,13 @@ export const HomePage: GlobalConfig = {
             de: 'Held',
           },
           fields: [Hero],
+        },
+        {
+          label: {
+            en: 'company Logo',
+            de: '',
+          },
+          fields: [CompanyLogo],
         },
       ],
     },

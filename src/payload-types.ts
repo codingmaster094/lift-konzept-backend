@@ -483,6 +483,15 @@ export interface Home {
       target?: ('_self' | '_blank') | null;
     };
   };
+  companylogo?: {
+    comapanylogos?:
+      | {
+          heroImage?: (string | null) | Media;
+          url?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
   publishedAt?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -640,6 +649,17 @@ export interface HomeSelect<T extends boolean = true> {
               label?: T;
               url?: T;
               target?: T;
+            };
+      };
+  companylogo?:
+    | T
+    | {
+        comapanylogos?:
+          | T
+          | {
+              heroImage?: T;
+              url?: T;
+              id?: T;
             };
       };
   publishedAt?: T;
