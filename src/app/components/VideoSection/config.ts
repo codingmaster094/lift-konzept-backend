@@ -15,7 +15,7 @@ export const VideoSection: Field = {
     de: '',
   },
   fields: [
-     {
+    {
       name: 'thumbnalImage',
       type: 'upload',
       label: {
@@ -29,11 +29,14 @@ export const VideoSection: Field = {
       name: 'video',
       type: 'upload',
       label: {
-        en: 'vidio',
-        de: '',
+        en: 'Hero Video',
+        de: 'Hero Video',
       },
-      relationTo: 'media',
+      relationTo: 'media', // or 'videos' if you make a separate collection
       required: false,
+      admin: {
+        description: 'Upload a video file (e.g. MP4, WebM)',
+      },
     },
     {
       name: 'Heading',
