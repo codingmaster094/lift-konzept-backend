@@ -8,23 +8,32 @@ import {
 import { Field } from 'payload'
 
 export const CompanyLogo: Field = {
-  name: 'companylogo',
+  name: 'companyLogo',
   type: 'group',
   label: {
-    en: 'Comapnay Logos',
-    de: '',
+    en: 'Company Logos',
+    de: 'Firmenlogos',
   },
   fields: [
     {
-      name: 'comapanylogos',
+      name: 'logos',
       type: 'array',
+      label: {
+        en: 'Logos',
+        de: 'Logos',
+      },
+      minRows: 0,
+      labels: {
+        singular: { en: 'Logo', de: 'Logo' },
+        plural: { en: 'Logos', de: 'Logos' },
+      },
       fields: [
         {
-          name: 'heroImage',
+          name: 'logoImage',
           type: 'upload',
           label: {
-            en: 'Hero Image',
-            de: 'Hero Bild',
+            en: 'Logo Image',
+            de: 'Logo Bild',
           },
           relationTo: 'media',
           required: false,
@@ -36,6 +45,7 @@ export const CompanyLogo: Field = {
             en: 'URL',
             de: 'URL',
           },
+          required: false,
         },
       ],
     },

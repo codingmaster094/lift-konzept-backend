@@ -483,10 +483,10 @@ export interface Home {
       target?: ('_self' | '_blank') | null;
     };
   };
-  companylogo?: {
-    comapanylogos?:
+  companyLogo?: {
+    logos?:
       | {
-          heroImage?: (string | null) | Media;
+          logoImage?: (string | null) | Media;
           url?: string | null;
           id?: string | null;
         }[]
@@ -651,13 +651,13 @@ export interface HomeSelect<T extends boolean = true> {
               target?: T;
             };
       };
-  companylogo?:
+  companyLogo?:
     | T
     | {
-        comapanylogos?:
+        logos?:
           | T
           | {
-              heroImage?: T;
+              logoImage?: T;
               url?: T;
               id?: T;
             };
