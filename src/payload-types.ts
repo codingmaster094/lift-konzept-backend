@@ -520,6 +520,25 @@ export interface Home {
         }[]
       | null;
   };
+  VideoSection?: {
+    video?: (string | null) | Media;
+    Heading?: string | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
   publishedAt?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -705,6 +724,13 @@ export interface HomeSelect<T extends boolean = true> {
               title?: T;
               id?: T;
             };
+      };
+  VideoSection?:
+    | T
+    | {
+        video?: T;
+        Heading?: T;
+        richText?: T;
       };
   publishedAt?: T;
   updatedAt?: T;

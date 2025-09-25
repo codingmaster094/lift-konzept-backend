@@ -4,6 +4,7 @@ import slugify from 'slugify'
 import { Hero } from '@/app/components/Hero/config'
 import { CompanyLogo } from '@/app/components/comapntLogos/config'
 import Experience from '@/app/components/Experiance/config'
+import VideoSection from '@/app/components/VideoSection/config'
 
 export const HomePage: GlobalConfig = {
   slug: 'home',
@@ -70,6 +71,13 @@ export const HomePage: GlobalConfig = {
             de: '',
           },
           fields: [Experience],
+        },
+        {
+          label: {
+            en: 'VideoSection',
+            de: '',
+          },
+          fields: [VideoSection],
         },
       ],
     },
