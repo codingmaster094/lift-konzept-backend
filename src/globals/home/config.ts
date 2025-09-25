@@ -7,6 +7,7 @@ import Experience from '@/app/components/Experiance/config'
 import VideoSection from '@/app/components/VideoSection/config'
 import VorteileSection from '@/app/components/VorteileSection/config'
 import StepsSection from '@/app/components/StepsSection/config'
+import FaqSection from '@/app/components/FaqSection/config'
 
 export const HomePage: GlobalConfig = {
   slug: 'home',
@@ -76,24 +77,31 @@ export const HomePage: GlobalConfig = {
         },
         {
           label: {
-            en: 'VideoSection',
+            en: 'Video Section',
             de: '',
           },
           fields: [VideoSection],
         },
         {
           label: {
-            en: 'VorteileSection',
+            en: 'Vorteile Section',
             de: '',
           },
           fields: [VorteileSection],
         },
         {
           label: {
-            en: 'StepsSection',
+            en: 'Steps Section',
             de: '',
           },
           fields: [StepsSection],
+        },
+        {
+          label: {
+            en: 'Faq Section',
+            de: '',
+          },
+          fields: [FaqSection],
         },
       ],
     },
