@@ -8,6 +8,7 @@ import VideoSection from '@/app/components/VideoSection/config'
 import VorteileSection from '@/app/components/VorteileSection/config'
 import StepsSection from '@/app/components/StepsSection/config'
 import FaqSection from '@/app/components/FaqSection/config'
+import CtaSection from '@/app/components/CtaSection/config'
 
 export const HomePage: GlobalConfig = {
   slug: 'home',
@@ -102,6 +103,13 @@ export const HomePage: GlobalConfig = {
             de: '',
           },
           fields: [FaqSection],
+        },
+        {
+          label: {
+            en: 'CTA Section',
+            de: '',
+          },
+          fields: [CtaSection],
         },
       ],
     },
