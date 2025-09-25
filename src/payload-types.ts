@@ -545,6 +545,82 @@ export interface Home {
       [k: string]: unknown;
     } | null;
   };
+  VorteileSection?: {
+    Heading?: string | null;
+    SubHeading?: string | null;
+    Vorteile_carousel?:
+      | {
+          Vorteile_carouselImage?: (string | null) | Media;
+          title?: string | null;
+          richText?: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  StepsSection?: {
+    Heading?: string | null;
+    SubHeading?: string | null;
+    Steps_carousel?:
+      | {
+          title?: string | null;
+          richText?: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  FaqSection?: {
+    Heading?: string | null;
+    SubHeading?: string | null;
+    FaqContent?:
+      | {
+          title?: string | null;
+          richText?: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
   publishedAt?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -738,6 +814,46 @@ export interface HomeSelect<T extends boolean = true> {
         video?: T;
         Heading?: T;
         richText?: T;
+      };
+  VorteileSection?:
+    | T
+    | {
+        Heading?: T;
+        SubHeading?: T;
+        Vorteile_carousel?:
+          | T
+          | {
+              Vorteile_carouselImage?: T;
+              title?: T;
+              richText?: T;
+              id?: T;
+            };
+      };
+  StepsSection?:
+    | T
+    | {
+        Heading?: T;
+        SubHeading?: T;
+        Steps_carousel?:
+          | T
+          | {
+              title?: T;
+              richText?: T;
+              id?: T;
+            };
+      };
+  FaqSection?:
+    | T
+    | {
+        Heading?: T;
+        SubHeading?: T;
+        FaqContent?:
+          | T
+          | {
+              title?: T;
+              richText?: T;
+              id?: T;
+            };
       };
   publishedAt?: T;
   updatedAt?: T;
