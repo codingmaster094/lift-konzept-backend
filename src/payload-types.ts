@@ -90,11 +90,13 @@ export interface Config {
     header: Header;
     footer: Footer;
     menus: Menu;
+    home: Home;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
     menus: MenusSelect<false> | MenusSelect<true>;
+    home: HomeSelect<false> | HomeSelect<true>;
   };
   locale: null;
   user: User & {
@@ -432,6 +434,61 @@ export interface Menu {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home".
+ */
+export interface Home {
+  id: string;
+  title?: string | null;
+  slug: string;
+  hero?: {
+    heroImage?: (string | null) | Media;
+    Heading?: string | null;
+    SubHeading?: string | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    hero_link?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+    heroformsection_Heading?: string | null;
+    heroformsection_items?:
+      | {
+          heroformsection_main_Image?: (string | null) | Media;
+          heroformsection_main_link?: {
+            label?: string | null;
+            url?: string | null;
+            target?: ('_self' | '_blank') | null;
+          };
+          id?: string | null;
+        }[]
+      | null;
+    heroformsection_redirect_Image?: (string | null) | Media;
+    heroformsection_redirect_link?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+  };
+  publishedAt?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header_select".
  */
 export interface HeaderSelect<T extends boolean = true> {
@@ -537,6 +594,55 @@ export interface MenusSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home_select".
+ */
+export interface HomeSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  hero?:
+    | T
+    | {
+        heroImage?: T;
+        Heading?: T;
+        SubHeading?: T;
+        richText?: T;
+        hero_link?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+        heroformsection_Heading?: T;
+        heroformsection_items?:
+          | T
+          | {
+              heroformsection_main_Image?: T;
+              heroformsection_main_link?:
+                | T
+                | {
+                    label?: T;
+                    url?: T;
+                    target?: T;
+                  };
+              id?: T;
+            };
+        heroformsection_redirect_Image?: T;
+        heroformsection_redirect_link?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+      };
+  publishedAt?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

@@ -10,6 +10,7 @@ import { Media } from './collections/Media'
 import { Header } from './globals/Header/config'
 import { Footer } from './globals/Footer/config'
 import { menus } from './globals/menus/config'
+import { HomePage } from './globals/home/config'
 import { Posts } from './collections/posts'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { en } from '@payloadcms/translations/languages/en'
@@ -18,7 +19,7 @@ import { de } from '@payloadcms/translations/languages/de'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 export default buildConfig({
-  // serverURL: 'https://protrance-backend-main.vercel.app',
+  serverURL: 'https://lift-konzept-backend.vercel.app',
   i18n: {
     supportedLanguages: { en, de },
   },
@@ -39,16 +40,18 @@ export default buildConfig({
       },
     },
   },
-  // cors: ['https://protrance-backend-main.vercel.app'],
+  cors: ['https://lift-konzept-backend.vercel.app'],
   collections: [Users, Media, Posts],
-  globals: [Header, Footer, menus],
+  globals: [Header, Footer, menus, HomePage],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || 'f104b2795f431aae94c77d75',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   db: mongooseAdapter({
-    url: process.env.DATABASE_URI || 'mongodb+srv://gawaledipak109_db_user:Headbase@cluster0.4t99yxv.mongodb.net/lift-konzept-main?retryWrites=true&w=majority&appName=Cluster0',
+    url:
+      process.env.DATABASE_URI ||
+      'mongodb+srv://gawaledipak109_db_user:Headbase@cluster0.4t99yxv.mongodb.net/lift-konzept-main?retryWrites=true&w=majority&appName=Cluster0',
   }),
   sharp,
   plugins: [
