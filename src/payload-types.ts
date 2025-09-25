@@ -522,6 +522,9 @@ export interface Home {
   };
   VideoSection?: {
     thumbnalImage?: (string | null) | Media;
+    /**
+     * Upload a video file (e.g. MP4, WebM)
+     */
     video?: (string | null) | Media;
     Heading?: string | null;
     richText?: {

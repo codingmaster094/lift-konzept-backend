@@ -29,8 +29,8 @@ export const VideoSection: Field = {
       name: 'video',
       type: 'upload',
       label: {
-        en: 'Hero Video',
-        de: 'Hero Video',
+        en: 'Video',
+        de: 'Video',
       },
       relationTo: 'media', // or 'videos' if you make a separate collection
       required: false,
