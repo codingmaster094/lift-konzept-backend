@@ -12,20 +12,7 @@ export const Media: CollectionConfig = {
     read: () => true,
   },
   upload: {
-    mimeTypes: ['image/*', 'video/*'], // allow images and videos
-  },
-  hooks: {
-    beforeChange: [
-      async ({ data, req }) => {
-        // Check uploaded file size
-        const file = req.file
-        if (file && file.size > 100 * 1024 * 1024) {
-          // 100 MB max
-          throw new Error('File too large. Maximum allowed size is 100MB.')
-        }
-        return data
-      },
-    ],
+    mimeTypes: ['image/*', 'video/*'], // allow both
   },
   fields: [
     {
