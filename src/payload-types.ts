@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    posts: Post;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -77,6 +78,7 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    posts: PostsSelect<false> | PostsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -84,8 +86,16 @@ export interface Config {
   db: {
     defaultIDType: string;
   };
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    header: Header;
+    footer: Footer;
+    menus: Menu;
+  };
+  globalsSelect: {
+    header: HeaderSelect<false> | HeaderSelect<true>;
+    footer: FooterSelect<false> | FooterSelect<true>;
+    menus: MenusSelect<false> | MenusSelect<true>;
+  };
   locale: null;
   user: User & {
     collection: 'users';
@@ -158,6 +168,22 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts".
+ */
+export interface Post {
+  id: string;
+  authors?: (string | User)[] | null;
+  title: string;
+  /**
+   * Auto-generated from title if left blank
+   */
+  slug: string;
+  publishedDate?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -170,6 +196,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: string | Media;
+      } | null)
+    | ({
+        relationTo: 'posts';
+        value: string | Post;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -255,6 +285,18 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts_select".
+ */
+export interface PostsSelect<T extends boolean = true> {
+  authors?: T;
+  title?: T;
+  slug?: T;
+  publishedDate?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents_select".
  */
 export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
@@ -284,6 +326,220 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "header".
+ */
+export interface Header {
+  id: string;
+  title?: string | null;
+  slug?: string | null;
+  Header_Logo?: (string | null) | Media;
+  Mobile_Header_Logo?: (string | null) | Media;
+  link?: {
+    Kontakt_label?: string | null;
+    url?: string | null;
+    target?: ('_self' | '_blank') | null;
+  };
+  type?: ('none' | 'highImpact' | 'mediumImpact' | 'lowImpact') | null;
+  media?: (string | null) | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer".
+ */
+export interface Footer {
+  id: string;
+  title?: string | null;
+  slug?: string | null;
+  footerlogo?: (string | null) | Media;
+  description?: string | null;
+  social?:
+    | {
+        social_icon: string | Media;
+        social_url: string;
+        id?: string | null;
+      }[]
+    | null;
+  kontakt?: {
+    phone?: string | null;
+    phone_url?: string | null;
+    email?: string | null;
+    email_url?: string | null;
+    address?: string | null;
+    address_url?: string | null;
+  };
+  navigation?:
+    | {
+        heading: string;
+        menus?:
+          | {
+              label: string;
+              url: string;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  legalLinks?:
+    | {
+        label?: string | null;
+        url?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  copyright?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "menus".
+ */
+export interface Menu {
+  id: string;
+  menus?:
+    | {
+        link?: {
+          label?: string | null;
+          url?: string | null;
+          target?: ('_self' | '_blank') | null;
+        };
+        submenus?:
+          | {
+              links?:
+                | {
+                    link?: {
+                      label?: string | null;
+                      url?: string | null;
+                      target?: ('_self' | '_blank') | null;
+                    };
+                    id?: string | null;
+                  }[]
+                | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "header_select".
+ */
+export interface HeaderSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  Header_Logo?: T;
+  Mobile_Header_Logo?: T;
+  link?:
+    | T
+    | {
+        Kontakt_label?: T;
+        url?: T;
+        target?: T;
+      };
+  type?: T;
+  media?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer_select".
+ */
+export interface FooterSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  footerlogo?: T;
+  description?: T;
+  social?:
+    | T
+    | {
+        social_icon?: T;
+        social_url?: T;
+        id?: T;
+      };
+  kontakt?:
+    | T
+    | {
+        phone?: T;
+        phone_url?: T;
+        email?: T;
+        email_url?: T;
+        address?: T;
+        address_url?: T;
+      };
+  navigation?:
+    | T
+    | {
+        heading?: T;
+        menus?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  legalLinks?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        id?: T;
+      };
+  copyright?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "menus_select".
+ */
+export interface MenusSelect<T extends boolean = true> {
+  menus?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+        submenus?:
+          | T
+          | {
+              links?:
+                | T
+                | {
+                    link?:
+                      | T
+                      | {
+                          label?: T;
+                          url?: T;
+                          target?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+            };
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
