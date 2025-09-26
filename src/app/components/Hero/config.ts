@@ -100,12 +100,7 @@ export const Hero: Field = {
       ],
     },
     {
-      name: 'name',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'isFeatured', // checkbox field
+      name: 'isHeroformSection', // checkbox field
       type: 'checkbox',
       label: 'heroform section Show/Hide',
       defaultValue: false, // optional default
