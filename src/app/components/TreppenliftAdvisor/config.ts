@@ -92,16 +92,6 @@ export const TreppenliftAdvisor: Field = {
       },
       fields: [
         {
-          name: 'TreppenliftAdvisorImage',
-          type: 'upload',
-          label: {
-            en: 'sub Stairlift Advisor Image',
-            de: 'UnTreppenlift-Berater sbild',
-          },
-          relationTo: 'media',
-          required: false,
-        },
-        {
           name: 'title',
           type: 'text',
           label: {
@@ -110,6 +100,23 @@ export const TreppenliftAdvisor: Field = {
           },
         },
       ],
+    },
+    {
+      name: 'decription',
+      type: 'richText',
+      label: {
+        en: 'Rich Text',
+        de: 'Textinhalt',
+      },
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [
+          ...defaultFeatures,
+          HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+          FixedToolbarFeature(),
+          InlineToolbarFeature(),
+          EXPERIMENTAL_TableFeature(),
+        ],
+      }),
     },
   ],
 }
