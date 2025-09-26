@@ -5,6 +5,7 @@ import { CompanyLogo } from '@/app/components/comapntLogos/config'
 import { revalidateTreppenlifte } from './hooks/revalidateTreppenlifte'
 import TreppenliftAdvisor from '@/app/components/TreppenliftAdvisor/config'
 import CtaSection from '@/app/components/CtaSection/config'
+import TreppenliftGallery from '@/app/components/TreppenliftGallery/config'
 
 export const TreppenliftePage: GlobalConfig = {
   slug: 'treppenlifte',
@@ -78,6 +79,13 @@ export const TreppenliftePage: GlobalConfig = {
             de: 'CTA Abschnitt',
           },
           fields: [CtaSection],
+        },
+        {
+          label: {
+            en: 'Stairlift Gallery',
+            de: 'Treppenlift Galerie',
+          },
+          fields: [TreppenliftGallery],
         },
       ],
     },
