@@ -790,10 +790,10 @@ export interface Treppenlifte {
       target?: ('_self' | '_blank') | null;
     };
   };
-  TreppenliftGalerie?: {
-    TreppenliftGalerie?:
+  TreppenliftGallery?: {
+    TreppenliftGallery?:
       | {
-          Stairlift_Gallery?: (string | null) | Media;
+          Stairliftgallery?: (string | null) | Media;
           id?: string | null;
         }[]
       | null;
@@ -1153,13 +1153,13 @@ export interface TreppenlifteSelect<T extends boolean = true> {
               target?: T;
             };
       };
-  TreppenliftGalerie?:
+  TreppenliftGallery?:
     | T
     | {
-        TreppenliftGalerie?:
+        TreppenliftGallery?:
           | T
           | {
-              Stairlift_Gallery?: T;
+              Stairliftgallery?: T;
               id?: T;
             };
       };

@@ -1,22 +1,16 @@
 import { Field } from 'payload'
-
 export const TreppenliftGallery: Field = {
-  name: 'TreppenliftGalerie',
+  name: 'TreppenliftGallery',
   type: 'group',
-
   fields: [
     {
-      name: 'TreppenliftGalerie',
+      name: 'TreppenliftGallery',
       type: 'array',
       minRows: 0,
       fields: [
         {
-          name: 'Stairlift_Gallery',
+          name: 'Stairliftgallery',
           type: 'upload',
-          label: {
-            en: 'Stairlift Gallery Image',
-            de: 'Treppenlift Galerie image',
-          },
           relationTo: 'media',
           required: false,
         },
@@ -24,5 +18,3 @@ export const TreppenliftGallery: Field = {
     },
   ],
 }
-
-export default TreppenliftGallery
