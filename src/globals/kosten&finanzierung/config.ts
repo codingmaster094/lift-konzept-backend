@@ -2,6 +2,7 @@ import type { GlobalConfig } from 'payload'
 import slugify from 'slugify'
 import { Hero } from '@/app/components/Hero/config'
 import { CompanyLogo } from '@/app/components/comapntLogos/config'
+import { KostenEinesSection } from '@/app/components/KostenEinesSection/config'
 import CtaSection from '@/app/components/CtaSection/config'
 import { revalidatekosten_finanzierung } from './hooks/revalidatekosten&finanzierung'
 
@@ -63,6 +64,13 @@ export const kosten_finanzierung: GlobalConfig = {
             de: '',
           },
           fields: [CompanyLogo],
+        },
+        {
+          label: {
+            en: 'KostenEines Section',
+            de: '',
+          },
+          fields: [KostenEinesSection],
         },
         {
           label: {
