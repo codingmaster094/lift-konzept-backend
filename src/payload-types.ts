@@ -719,8 +719,9 @@ export interface Treppenlifte {
       | null;
   };
   TreppenliftAdvisor?: {
-    experiance_image1?: (string | null) | Media;
-    experiance_image2?: (string | null) | Media;
+    Stairlift_advisor_image1?: (string | null) | Media;
+    Stairlift_advisor_image2?: (string | null) | Media;
+    Stairlift_advisor_image3?: (string | null) | Media;
     Heading?: string | null;
     SubHeading?: string | null;
     richText?: {
@@ -738,13 +739,42 @@ export interface Treppenlifte {
       };
       [k: string]: unknown;
     } | null;
-    experiance?:
+    TreppenliftAdvisor?:
       | {
-          experianceImage?: (string | null) | Media;
+          TreppenliftAdvisorImage?: (string | null) | Media;
           title?: string | null;
           id?: string | null;
         }[]
       | null;
+  };
+  CtaSection?: {
+    CtaImage?: (string | null) | Media;
+    Heading?: string | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    cta_link1?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+    cta_link2?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
   };
   publishedAt?: string | null;
   updatedAt?: string | null;
@@ -1066,17 +1096,39 @@ export interface TreppenlifteSelect<T extends boolean = true> {
   TreppenliftAdvisor?:
     | T
     | {
-        experiance_image1?: T;
-        experiance_image2?: T;
+        Stairlift_advisor_image1?: T;
+        Stairlift_advisor_image2?: T;
+        Stairlift_advisor_image3?: T;
         Heading?: T;
         SubHeading?: T;
         richText?: T;
-        experiance?:
+        TreppenliftAdvisor?:
           | T
           | {
-              experianceImage?: T;
+              TreppenliftAdvisorImage?: T;
               title?: T;
               id?: T;
+            };
+      };
+  CtaSection?:
+    | T
+    | {
+        CtaImage?: T;
+        Heading?: T;
+        richText?: T;
+        cta_link1?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+        cta_link2?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
             };
       };
   publishedAt?: T;

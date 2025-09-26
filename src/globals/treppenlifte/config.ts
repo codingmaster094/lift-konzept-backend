@@ -73,12 +73,12 @@ export const TreppenliftePage: GlobalConfig = {
           fields: [TreppenliftAdvisor],
         },
         {
-                  label: {
-                    en: 'CTA Section',
-                    de: 'CTA Abschnitt',
-                  },
-                  fields: [CtaSection],
-                },
+          label: {
+            en: 'CTA Section',
+            de: 'CTA Abschnitt',
+          },
+          fields: [CtaSection],
+        },
       ],
     },
     {

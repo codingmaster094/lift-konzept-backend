@@ -11,26 +11,36 @@ export const TreppenliftAdvisor: Field = {
   name: 'TreppenliftAdvisor',
   type: 'group',
   label: {
-    en: 'Treppenlift Advisor Section',
-    de: 'Erfahrungsbereich',
+    en: 'Stairlift Advisor Section',
+    de: 'Treppenlift-Berater',
   },
   fields: [
     {
-      name: 'experiance_image1',
+      name: 'Stairlift_advisor_image1',
       type: 'upload',
       label: {
-        en: 'Treppenlift Advisor Image',
-        de: 'Erfahrungsbild 1',
+        en: 'Stairlift Advisor Image',
+        de: 'Treppenlift-Berater image 1',
       },
       relationTo: 'media',
       required: false,
     },
     {
-      name: 'experiance_image2',
+      name: 'Stairlift_advisor_image2',
       type: 'upload',
       label: {
-        en: 'Treppenlift Advisor Image',
-        de: 'Erfahrungsbild 2',
+        en: 'Stairlift Advisor Image',
+        de: 'Treppenlift-Berater image  2',
+      },
+      relationTo: 'media',
+      required: false,
+    },
+    {
+      name: 'Stairlift_advisor_image3',
+      type: 'upload',
+      label: {
+        en: 'Stairlift Advisor Image',
+        de: 'Treppenlift-Berater image  3',
       },
       relationTo: 'media',
       required: false,
@@ -69,24 +79,24 @@ export const TreppenliftAdvisor: Field = {
       }),
     },
     {
-      name: 'experiance',
+      name: 'TreppenliftAdvisor',
       type: 'array',
       label: {
-        en: 'experiance',
-        de: 'Erfahrung',
+        en: 'Stairlift advisor',
+        de: 'Treppenlift-Berater',
       },
       minRows: 0,
       labels: {
-        singular: { en: 'experiance', de: 'Erfahrung' },
-        plural: { en: 'experiance', de: 'Erfahrungen' },
+        singular: { en: 'Stairlift Advisor', de: 'Treppenlift-Berater' },
+        plural: { en: 'Stairlift Advisor', de: 'Treppenlift-Berater' },
       },
       fields: [
         {
-          name: 'experianceImage',
+          name: 'TreppenliftAdvisorImage',
           type: 'upload',
           label: {
-            en: 'sub experiance Image',
-            de: 'Untererfahrungsbild',
+            en: 'sub Stairlift Advisor Image',
+            de: 'UnTreppenlift-Berater sbild',
           },
           relationTo: 'media',
           required: false,
