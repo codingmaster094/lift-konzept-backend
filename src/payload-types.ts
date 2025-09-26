@@ -791,6 +791,8 @@ export interface Treppenlifte {
     };
   };
   TreppenliftGallery?: {
+    Heading?: string | null;
+    SubHeading?: string | null;
     TreppenliftGallery?:
       | {
           Stairliftgallery?: (string | null) | Media;
@@ -1156,6 +1158,8 @@ export interface TreppenlifteSelect<T extends boolean = true> {
   TreppenliftGallery?:
     | T
     | {
+        Heading?: T;
+        SubHeading?: T;
         TreppenliftGallery?:
           | T
           | {
