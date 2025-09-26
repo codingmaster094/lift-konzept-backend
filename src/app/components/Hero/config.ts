@@ -1,5 +1,11 @@
-import { EXPERIMENTAL_TableFeature, FixedToolbarFeature, HeadingFeature, InlineToolbarFeature, lexicalEditor } from "@payloadcms/richtext-lexical";
-import { Field } from "payload";
+import {
+  EXPERIMENTAL_TableFeature,
+  FixedToolbarFeature,
+  HeadingFeature,
+  InlineToolbarFeature,
+  lexicalEditor,
+} from '@payloadcms/richtext-lexical'
+import { Field } from 'payload'
 
 export const Hero: Field = {
   name: 'hero',
@@ -59,7 +65,7 @@ export const Hero: Field = {
       type: 'group',
       label: {
         en: 'Hero Link',
-        de: 'Hero Link',
+        de: 'Held Link',
       },
       fields: [
         {
@@ -93,7 +99,17 @@ export const Hero: Field = {
         },
       ],
     },
-
+    {
+      name: 'name',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'isFeatured', // checkbox field
+      type: 'checkbox',
+      label: 'heroform section Show/Hide',
+      defaultValue: false, // optional default
+    },
     {
       name: 'heroformsection_Heading',
       type: 'text',
@@ -116,54 +132,54 @@ export const Hero: Field = {
       },
       fields: [
         {
-      name: 'heroformsection_main_Image',
-      type: 'upload',
-      label: {
-        en: 'Hero Form Section Main Image',
-        de: 'Hero Formularbereich Hauptbild',
-      },
-      relationTo: 'media',
-      required: false,
-    },
-    {
-      name: 'heroformsection_main_link',
-      type: 'group',
-      label: {
-        en: 'Hero Form Section Main Link',
-        de: 'Hero Formularbereich Hauptlink',
-      },
-      fields: [
-        {
-          name: 'label',
-          type: 'text',
+          name: 'heroformsection_main_Image',
+          type: 'upload',
           label: {
-            en: 'Link Label',
-            de: 'Link-Beschriftung',
+            en: 'Hero Form Section Main Image',
+            de: 'Hero Formularbereich Hauptbild',
           },
+          relationTo: 'media',
+          required: false,
         },
         {
-          name: 'url',
-          type: 'text',
+          name: 'heroformsection_main_link',
+          type: 'group',
           label: {
-            en: 'URL',
-            de: 'URL',
+            en: 'Hero Form Section Main Link',
+            de: 'Hero Formularbereich Hauptlink',
           },
-        },
-        {
-          name: 'target',
-          type: 'select',
-          label: {
-            en: 'Target',
-            de: 'Ziel',
-          },
-          options: [
-            { label: { en: 'Same Tab', de: 'Gleiches Tab' }, value: '_self' },
-            { label: { en: 'New Tab', de: 'Neues Tab' }, value: '_blank' },
+          fields: [
+            {
+              name: 'label',
+              type: 'text',
+              label: {
+                en: 'Link Label',
+                de: 'Link-Beschriftung',
+              },
+            },
+            {
+              name: 'url',
+              type: 'text',
+              label: {
+                en: 'URL',
+                de: 'URL',
+              },
+            },
+            {
+              name: 'target',
+              type: 'select',
+              label: {
+                en: 'Target',
+                de: 'Ziel',
+              },
+              options: [
+                { label: { en: 'Same Tab', de: 'Gleiches Tab' }, value: '_self' },
+                { label: { en: 'New Tab', de: 'Neues Tab' }, value: '_blank' },
+              ],
+              defaultValue: '_self',
+            },
           ],
-          defaultValue: '_self',
         },
-      ],
-    },
       ],
     },
 

@@ -12,7 +12,7 @@ export const VideoSection: Field = {
   type: 'group',
   label: {
     en: 'Video Section',
-    de: '',
+    de: 'Video-Bereich',
   },
   fields: [
     {
@@ -20,7 +20,7 @@ export const VideoSection: Field = {
       type: 'upload',
       label: {
         en: 'thumbnal Image',
-        de: '',
+        de: 'Vorschaubild',
       },
       relationTo: 'media',
       required: false,
@@ -43,7 +43,7 @@ export const VideoSection: Field = {
       type: 'text',
       label: {
         en: 'Heading',
-        de: '',
+        de: 'Überschrift',
       },
     },
     {
@@ -51,7 +51,7 @@ export const VideoSection: Field = {
       type: 'richText',
       label: {
         en: 'Rich Text',
-        de: '',
+        de: 'Textinhalt',
       },
       editor: lexicalEditor({
         features: ({ defaultFeatures }) => [

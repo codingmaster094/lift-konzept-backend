@@ -12,7 +12,7 @@ export const FaqSection: Field = {
   type: 'group',
   label: {
     en: 'Faq Section',
-    de: '',
+    de: 'FAQ-Bereich',
   },
   fields: [
     {
@@ -20,7 +20,7 @@ export const FaqSection: Field = {
       type: 'text',
       label: {
         en: 'Heading',
-        de: '',
+        de: 'Überschrift',
       },
     },
     {
@@ -28,7 +28,7 @@ export const FaqSection: Field = {
       type: 'text',
       label: {
         en: 'Sub Heading',
-        de: '',
+        de: 'Unterüberschrift',
       },
     },
     {
@@ -36,12 +36,12 @@ export const FaqSection: Field = {
       type: 'array',
       label: {
         en: 'Faq Content',
-        de: 'Faq Content',
+        de: 'FAQ-Inhalt',
       },
       minRows: 0,
       labels: {
-        singular: { en: 'Faq Content', de: '' },
-        plural: { en: 'Faq Content', de: '' },
+        singular: { en: 'Faq Content', de: 'FAQ-Eintrag' },
+        plural: { en: 'Faq Content', de: 'FAQ-Einträge' },
       },
       fields: [
         {
@@ -49,7 +49,7 @@ export const FaqSection: Field = {
           type: 'text',
           label: {
             en: 'title',
-            de: '',
+            de: 'Titel',
           },
         },
         {
@@ -57,7 +57,7 @@ export const FaqSection: Field = {
           type: 'richText',
           label: {
             en: 'Rich Text',
-            de: 'Rich Text',
+            de: 'Textinhalt',
           },
           editor: lexicalEditor({
             features: ({ defaultFeatures }) => [

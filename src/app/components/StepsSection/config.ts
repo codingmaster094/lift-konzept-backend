@@ -12,7 +12,7 @@ export const StepsSection: Field = {
   type: 'group',
   label: {
     en: 'Steps Section',
-    de: '',
+    de: 'Schritte-Bereich',
   },
   fields: [
     {
@@ -20,7 +20,7 @@ export const StepsSection: Field = {
       type: 'text',
       label: {
         en: 'Heading',
-        de: '',
+        de: 'Überschrift',
       },
     },
     {
@@ -28,7 +28,7 @@ export const StepsSection: Field = {
       type: 'text',
       label: {
         en: 'Sub Heading',
-        de: '',
+        de: 'Unterüberschrift',
       },
     },
     {
@@ -36,12 +36,12 @@ export const StepsSection: Field = {
       type: 'array',
       label: {
         en: 'Steps_carousel',
-        de: 'Steps_carousel',
+        de: 'Schritte-Karussell',
       },
       minRows: 0,
       labels: {
-        singular: { en: 'Steps_carousel', de: '' },
-        plural: { en: 'Steps_carousel', de: '' },
+        singular: { en: 'Steps_carousel', de: 'Schritt' },
+        plural: { en: 'Steps_carousel', de: 'Schritte' },
       },
       fields: [
         {
@@ -49,7 +49,7 @@ export const StepsSection: Field = {
           type: 'text',
           label: {
             en: 'title',
-            de: '',
+            de: 'Titel',
           },
         },
         {
@@ -57,7 +57,7 @@ export const StepsSection: Field = {
           type: 'richText',
           label: {
             en: 'Rich Text',
-            de: 'Rich Text',
+            de: 'Textinhalt',
           },
           editor: lexicalEditor({
             features: ({ defaultFeatures }) => [

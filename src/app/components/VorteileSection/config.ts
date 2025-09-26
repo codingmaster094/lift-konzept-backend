@@ -12,7 +12,7 @@ export const VorteileSection: Field = {
   type: 'group',
   label: {
     en: 'Vorteile Section',
-    de: '',
+    de: 'Vorteile-Bereich',
   },
   fields: [
     {
@@ -20,7 +20,7 @@ export const VorteileSection: Field = {
       type: 'text',
       label: {
         en: 'Heading',
-        de: '',
+        de: 'Überschrift',
       },
     },
     {
@@ -28,7 +28,7 @@ export const VorteileSection: Field = {
       type: 'text',
       label: {
         en: 'Sub Heading',
-        de: '',
+        de: 'Unterüberschrift',
       },
     },
     {
@@ -36,12 +36,12 @@ export const VorteileSection: Field = {
       type: 'array',
       label: {
         en: 'Vorteile_carousel',
-        de: 'Vorteile_carousel',
+        de: 'Vorteile-Karussell',
       },
       minRows: 0,
       labels: {
-        singular: { en: 'Vorteile_carousel', de: '' },
-        plural: { en: 'Vorteile_carousel', de: '' },
+        singular: { en: 'Vorteile_carousel', de: 'Vorteil' },
+        plural: { en: 'Vorteile_carousel', de: 'Vorteile' },
       },
       fields: [
         {
@@ -49,7 +49,7 @@ export const VorteileSection: Field = {
           type: 'upload',
           label: {
             en: 'Vorteile_carousel Image',
-            de: '',
+            de: 'Vorteile-Karussell Bild',
           },
           relationTo: 'media',
           required: false,
@@ -59,7 +59,7 @@ export const VorteileSection: Field = {
           type: 'text',
           label: {
             en: 'title',
-            de: '',
+            de: 'Titel',
           },
         },
         {
@@ -67,7 +67,7 @@ export const VorteileSection: Field = {
           type: 'richText',
           label: {
             en: 'Rich Text',
-            de: 'Rich Text',
+            de: 'Textinhalt',
           },
           editor: lexicalEditor({
             features: ({ defaultFeatures }) => [

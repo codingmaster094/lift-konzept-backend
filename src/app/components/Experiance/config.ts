@@ -12,7 +12,7 @@ export const Experience: Field = {
   type: 'group',
   label: {
     en: 'Experience Section',
-    de: '',
+    de: 'Erfahrungsbereich',
   },
   fields: [
     {
@@ -20,7 +20,7 @@ export const Experience: Field = {
       type: 'upload',
       label: {
         en: 'Experience Image',
-        de: '',
+        de: 'Erfahrungsbild 1',
       },
       relationTo: 'media',
       required: false,
@@ -30,7 +30,7 @@ export const Experience: Field = {
       type: 'upload',
       label: {
         en: 'Experience Image',
-        de: '',
+        de: 'Erfahrungsbild 2',
       },
       relationTo: 'media',
       required: false,
@@ -40,7 +40,7 @@ export const Experience: Field = {
       type: 'text',
       label: {
         en: 'Heading',
-        de: '',
+        de: 'Überschrift',
       },
     },
     {
@@ -48,7 +48,7 @@ export const Experience: Field = {
       type: 'text',
       label: {
         en: 'Sub Heading',
-        de: '',
+        de: 'Unterüberschrift',
       },
     },
     {
@@ -56,7 +56,7 @@ export const Experience: Field = {
       type: 'richText',
       label: {
         en: 'Rich Text',
-        de: '',
+        de: 'Textinhalt',
       },
       editor: lexicalEditor({
         features: ({ defaultFeatures }) => [
@@ -73,12 +73,12 @@ export const Experience: Field = {
       type: 'array',
       label: {
         en: 'experiance',
-        de: 'experiance',
+        de: 'Erfahrung',
       },
       minRows: 0,
       labels: {
-        singular: { en: 'experiance', de: '' },
-        plural: { en: 'experiance', de: '' },
+        singular: { en: 'experiance', de: 'Erfahrung' },
+        plural: { en: 'experiance', de: 'Erfahrungen' },
       },
       fields: [
         {
@@ -86,7 +86,7 @@ export const Experience: Field = {
           type: 'upload',
           label: {
             en: 'sub experiance Image',
-            de: '',
+            de: 'Untererfahrungsbild',
           },
           relationTo: 'media',
           required: false,
@@ -96,7 +96,7 @@ export const Experience: Field = {
           type: 'text',
           label: {
             en: 'title',
-            de: '',
+            de: 'Titel',
           },
         },
       ],

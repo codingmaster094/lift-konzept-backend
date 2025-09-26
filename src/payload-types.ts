@@ -91,12 +91,14 @@ export interface Config {
     footer: Footer;
     menus: Menu;
     home: Home;
+    treppenlifte: Treppenlifte;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
     menus: MenusSelect<false> | MenusSelect<true>;
     home: HomeSelect<false> | HomeSelect<true>;
+    treppenlifte: TreppenlifteSelect<false> | TreppenlifteSelect<true>;
   };
   locale: null;
   user: User & {
@@ -442,7 +444,7 @@ export interface Home {
   id: string;
   title?: string | null;
   slug: string;
-  hero?: {
+  hero: {
     heroImage?: (string | null) | Media;
     Heading?: string | null;
     SubHeading?: string | null;
@@ -466,6 +468,8 @@ export interface Home {
       url?: string | null;
       target?: ('_self' | '_blank') | null;
     };
+    name: string;
+    isFeatured?: boolean | null;
     heroformsection_Heading?: string | null;
     heroformsection_items?:
       | {
@@ -621,6 +625,257 @@ export interface Home {
         }[]
       | null;
   };
+  CtaSection?: {
+    CtaImage?: (string | null) | Media;
+    Heading?: string | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    cta_link1?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+    cta_link2?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+  };
+  publishedAt?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "treppenlifte".
+ */
+export interface Treppenlifte {
+  id: string;
+  title?: string | null;
+  slug: string;
+  hero: {
+    heroImage?: (string | null) | Media;
+    Heading?: string | null;
+    SubHeading?: string | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    hero_link?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+    name: string;
+    isFeatured?: boolean | null;
+    heroformsection_Heading?: string | null;
+    heroformsection_items?:
+      | {
+          heroformsection_main_Image?: (string | null) | Media;
+          heroformsection_main_link?: {
+            label?: string | null;
+            url?: string | null;
+            target?: ('_self' | '_blank') | null;
+          };
+          id?: string | null;
+        }[]
+      | null;
+    heroformsection_redirect_Image?: (string | null) | Media;
+    heroformsection_redirect_link?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+  };
+  companyLogo?: {
+    logos?:
+      | {
+          logoImage?: (string | null) | Media;
+          url?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  Experience?: {
+    experiance_image1?: (string | null) | Media;
+    experiance_image2?: (string | null) | Media;
+    Heading?: string | null;
+    SubHeading?: string | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    experiance?:
+      | {
+          experianceImage?: (string | null) | Media;
+          title?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  VideoSection?: {
+    thumbnalImage?: (string | null) | Media;
+    /**
+     * Upload a video file (e.g. MP4, WebM)
+     */
+    video?: (string | null) | Media;
+    Heading?: string | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  VorteileSection?: {
+    Heading?: string | null;
+    SubHeading?: string | null;
+    Vorteile_carousel?:
+      | {
+          Vorteile_carouselImage?: (string | null) | Media;
+          title?: string | null;
+          richText?: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  StepsSection?: {
+    Heading?: string | null;
+    SubHeading?: string | null;
+    Steps_carousel?:
+      | {
+          title?: string | null;
+          richText?: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  FaqSection?: {
+    Heading?: string | null;
+    SubHeading?: string | null;
+    FaqContent?:
+      | {
+          title?: string | null;
+          richText?: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  CtaSection?: {
+    CtaImage?: (string | null) | Media;
+    Heading?: string | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    cta_link1?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+    cta_link2?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+  };
   publishedAt?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -757,6 +1012,8 @@ export interface HomeSelect<T extends boolean = true> {
               url?: T;
               target?: T;
             };
+        name?: T;
+        isFeatured?: T;
         heroformsection_Heading?: T;
         heroformsection_items?:
           | T
@@ -853,6 +1110,174 @@ export interface HomeSelect<T extends boolean = true> {
               title?: T;
               richText?: T;
               id?: T;
+            };
+      };
+  CtaSection?:
+    | T
+    | {
+        CtaImage?: T;
+        Heading?: T;
+        richText?: T;
+        cta_link1?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+        cta_link2?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+      };
+  publishedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "treppenlifte_select".
+ */
+export interface TreppenlifteSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  hero?:
+    | T
+    | {
+        heroImage?: T;
+        Heading?: T;
+        SubHeading?: T;
+        richText?: T;
+        hero_link?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+        name?: T;
+        isFeatured?: T;
+        heroformsection_Heading?: T;
+        heroformsection_items?:
+          | T
+          | {
+              heroformsection_main_Image?: T;
+              heroformsection_main_link?:
+                | T
+                | {
+                    label?: T;
+                    url?: T;
+                    target?: T;
+                  };
+              id?: T;
+            };
+        heroformsection_redirect_Image?: T;
+        heroformsection_redirect_link?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+      };
+  companyLogo?:
+    | T
+    | {
+        logos?:
+          | T
+          | {
+              logoImage?: T;
+              url?: T;
+              id?: T;
+            };
+      };
+  Experience?:
+    | T
+    | {
+        experiance_image1?: T;
+        experiance_image2?: T;
+        Heading?: T;
+        SubHeading?: T;
+        richText?: T;
+        experiance?:
+          | T
+          | {
+              experianceImage?: T;
+              title?: T;
+              id?: T;
+            };
+      };
+  VideoSection?:
+    | T
+    | {
+        thumbnalImage?: T;
+        video?: T;
+        Heading?: T;
+        richText?: T;
+      };
+  VorteileSection?:
+    | T
+    | {
+        Heading?: T;
+        SubHeading?: T;
+        Vorteile_carousel?:
+          | T
+          | {
+              Vorteile_carouselImage?: T;
+              title?: T;
+              richText?: T;
+              id?: T;
+            };
+      };
+  StepsSection?:
+    | T
+    | {
+        Heading?: T;
+        SubHeading?: T;
+        Steps_carousel?:
+          | T
+          | {
+              title?: T;
+              richText?: T;
+              id?: T;
+            };
+      };
+  FaqSection?:
+    | T
+    | {
+        Heading?: T;
+        SubHeading?: T;
+        FaqContent?:
+          | T
+          | {
+              title?: T;
+              richText?: T;
+              id?: T;
+            };
+      };
+  CtaSection?:
+    | T
+    | {
+        CtaImage?: T;
+        Heading?: T;
+        richText?: T;
+        cta_link1?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+        cta_link2?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
             };
       };
   publishedAt?: T;

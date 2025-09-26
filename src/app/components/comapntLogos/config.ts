@@ -1,10 +1,3 @@
-import {
-  EXPERIMENTAL_TableFeature,
-  FixedToolbarFeature,
-  HeadingFeature,
-  InlineToolbarFeature,
-  lexicalEditor,
-} from '@payloadcms/richtext-lexical'
 import { Field } from 'payload'
 
 export const CompanyLogo: Field = {

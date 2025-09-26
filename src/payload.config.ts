@@ -14,6 +14,7 @@ import { Header } from './globals/Header/config'
 import { Footer } from './globals/Footer/config'
 import { menus } from './globals/menus/config'
 import { HomePage } from './globals/home/config'
+import { TreppenliftePage } from './globals/treppenlifte/config'
 
 // i18n
 import { en } from '@payloadcms/translations/languages/en'
@@ -42,7 +43,7 @@ export default buildConfig({
   },
   cors: ['https://lift-konzept-backend.vercel.app'],
   collections: [Users, Media, Posts],
-  globals: [Header, Footer, menus, HomePage],
+  globals: [Header, Footer, menus, HomePage, TreppenliftePage],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || 'f104b2795f431aae94c77d75',
   typescript: {
