@@ -2,13 +2,9 @@ import type { GlobalConfig } from 'payload'
 import slugify from 'slugify'
 import { Hero } from '@/app/components/Hero/config'
 import { CompanyLogo } from '@/app/components/comapntLogos/config'
-import Experience from '@/app/components/Experiance/config'
-import VideoSection from '@/app/components/VideoSection/config'
-import VorteileSection from '@/app/components/VorteileSection/config'
-import StepsSection from '@/app/components/StepsSection/config'
-import FaqSection from '@/app/components/FaqSection/config'
-import CtaSection from '@/app/components/CtaSection/config'
 import { revalidateTreppenlifte } from './hooks/revalidateTreppenlifte'
+import TreppenliftAdvisor from '@/app/components/TreppenliftAdvisor/config'
+import CtaSection from '@/app/components/CtaSection/config'
 
 export const TreppenliftePage: GlobalConfig = {
   slug: 'treppenlifte',
@@ -71,46 +67,18 @@ export const TreppenliftePage: GlobalConfig = {
         },
         {
           label: {
-            en: 'Experience',
-            de: 'Erfahrung',
+            en: 'Stairlift Advisor',
+            de: 'Treppenlift-Berater',
           },
-          fields: [Experience],
+          fields: [TreppenliftAdvisor],
         },
         {
-          label: {
-            en: 'Video Section',
-            de: 'Video-Bereich',
-          },
-          fields: [VideoSection],
-        },
-        {
-          label: {
-            en: 'Vorteile Section',
-            de: 'Vorteile Abschnitt',
-          },
-          fields: [VorteileSection],
-        },
-        {
-          label: {
-            en: 'Steps Section',
-            de: 'Abschnitt „Schritte“',
-          },
-          fields: [StepsSection],
-        },
-        {
-          label: {
-            en: 'Faq Section',
-            de: 'FAQ-Bereich',
-          },
-          fields: [FaqSection],
-        },
-        {
-          label: {
-            en: 'CTA Section',
-            de: 'CTA-Abschnitt',
-          },
-          fields: [CtaSection],
-        },
+                  label: {
+                    en: 'CTA Section',
+                    de: 'CTA Abschnitt',
+                  },
+                  fields: [CtaSection],
+                },
       ],
     },
     {

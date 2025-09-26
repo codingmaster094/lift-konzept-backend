@@ -444,7 +444,7 @@ export interface Home {
   id: string;
   title?: string | null;
   slug: string;
-  hero: {
+  hero?: {
     heroImage?: (string | null) | Media;
     Heading?: string | null;
     SubHeading?: string | null;
@@ -468,8 +468,7 @@ export interface Home {
       url?: string | null;
       target?: ('_self' | '_blank') | null;
     };
-    name: string;
-    isFeatured?: boolean | null;
+    isHeroformSection?: boolean | null;
     heroformsection_Heading?: string | null;
     heroformsection_items?:
       | {
@@ -666,7 +665,7 @@ export interface Treppenlifte {
   id: string;
   title?: string | null;
   slug: string;
-  hero: {
+  hero?: {
     heroImage?: (string | null) | Media;
     Heading?: string | null;
     SubHeading?: string | null;
@@ -690,8 +689,7 @@ export interface Treppenlifte {
       url?: string | null;
       target?: ('_self' | '_blank') | null;
     };
-    name: string;
-    isFeatured?: boolean | null;
+    isHeroformSection?: boolean | null;
     heroformsection_Heading?: string | null;
     heroformsection_items?:
       | {
@@ -720,7 +718,7 @@ export interface Treppenlifte {
         }[]
       | null;
   };
-  Experience?: {
+  TreppenliftAdvisor?: {
     experiance_image1?: (string | null) | Media;
     experiance_image2?: (string | null) | Media;
     Heading?: string | null;
@@ -747,134 +745,6 @@ export interface Treppenlifte {
           id?: string | null;
         }[]
       | null;
-  };
-  VideoSection?: {
-    thumbnalImage?: (string | null) | Media;
-    /**
-     * Upload a video file (e.g. MP4, WebM)
-     */
-    video?: (string | null) | Media;
-    Heading?: string | null;
-    richText?: {
-      root: {
-        type: string;
-        children: {
-          type: string;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
-  };
-  VorteileSection?: {
-    Heading?: string | null;
-    SubHeading?: string | null;
-    Vorteile_carousel?:
-      | {
-          Vorteile_carouselImage?: (string | null) | Media;
-          title?: string | null;
-          richText?: {
-            root: {
-              type: string;
-              children: {
-                type: string;
-                version: number;
-                [k: string]: unknown;
-              }[];
-              direction: ('ltr' | 'rtl') | null;
-              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-              indent: number;
-              version: number;
-            };
-            [k: string]: unknown;
-          } | null;
-          id?: string | null;
-        }[]
-      | null;
-  };
-  StepsSection?: {
-    Heading?: string | null;
-    SubHeading?: string | null;
-    Steps_carousel?:
-      | {
-          title?: string | null;
-          richText?: {
-            root: {
-              type: string;
-              children: {
-                type: string;
-                version: number;
-                [k: string]: unknown;
-              }[];
-              direction: ('ltr' | 'rtl') | null;
-              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-              indent: number;
-              version: number;
-            };
-            [k: string]: unknown;
-          } | null;
-          id?: string | null;
-        }[]
-      | null;
-  };
-  FaqSection?: {
-    Heading?: string | null;
-    SubHeading?: string | null;
-    FaqContent?:
-      | {
-          title?: string | null;
-          richText?: {
-            root: {
-              type: string;
-              children: {
-                type: string;
-                version: number;
-                [k: string]: unknown;
-              }[];
-              direction: ('ltr' | 'rtl') | null;
-              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-              indent: number;
-              version: number;
-            };
-            [k: string]: unknown;
-          } | null;
-          id?: string | null;
-        }[]
-      | null;
-  };
-  CtaSection?: {
-    CtaImage?: (string | null) | Media;
-    Heading?: string | null;
-    richText?: {
-      root: {
-        type: string;
-        children: {
-          type: string;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
-    cta_link1?: {
-      label?: string | null;
-      url?: string | null;
-      target?: ('_self' | '_blank') | null;
-    };
-    cta_link2?: {
-      label?: string | null;
-      url?: string | null;
-      target?: ('_self' | '_blank') | null;
-    };
   };
   publishedAt?: string | null;
   updatedAt?: string | null;
@@ -1012,8 +882,7 @@ export interface HomeSelect<T extends boolean = true> {
               url?: T;
               target?: T;
             };
-        name?: T;
-        isFeatured?: T;
+        isHeroformSection?: T;
         heroformsection_Heading?: T;
         heroformsection_items?:
           | T
@@ -1159,8 +1028,7 @@ export interface TreppenlifteSelect<T extends boolean = true> {
               url?: T;
               target?: T;
             };
-        name?: T;
-        isFeatured?: T;
+        isHeroformSection?: T;
         heroformsection_Heading?: T;
         heroformsection_items?:
           | T
@@ -1195,7 +1063,7 @@ export interface TreppenlifteSelect<T extends boolean = true> {
               id?: T;
             };
       };
-  Experience?:
+  TreppenliftAdvisor?:
     | T
     | {
         experiance_image1?: T;
@@ -1209,75 +1077,6 @@ export interface TreppenlifteSelect<T extends boolean = true> {
               experianceImage?: T;
               title?: T;
               id?: T;
-            };
-      };
-  VideoSection?:
-    | T
-    | {
-        thumbnalImage?: T;
-        video?: T;
-        Heading?: T;
-        richText?: T;
-      };
-  VorteileSection?:
-    | T
-    | {
-        Heading?: T;
-        SubHeading?: T;
-        Vorteile_carousel?:
-          | T
-          | {
-              Vorteile_carouselImage?: T;
-              title?: T;
-              richText?: T;
-              id?: T;
-            };
-      };
-  StepsSection?:
-    | T
-    | {
-        Heading?: T;
-        SubHeading?: T;
-        Steps_carousel?:
-          | T
-          | {
-              title?: T;
-              richText?: T;
-              id?: T;
-            };
-      };
-  FaqSection?:
-    | T
-    | {
-        Heading?: T;
-        SubHeading?: T;
-        FaqContent?:
-          | T
-          | {
-              title?: T;
-              richText?: T;
-              id?: T;
-            };
-      };
-  CtaSection?:
-    | T
-    | {
-        CtaImage?: T;
-        Heading?: T;
-        richText?: T;
-        cta_link1?:
-          | T
-          | {
-              label?: T;
-              url?: T;
-              target?: T;
-            };
-        cta_link2?:
-          | T
-          | {
-              label?: T;
-              url?: T;
-              target?: T;
             };
       };
   publishedAt?: T;
