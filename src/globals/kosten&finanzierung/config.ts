@@ -5,6 +5,7 @@ import { CompanyLogo } from '@/app/components/comapntLogos/config'
 import { KostenEinesSection } from '@/app/components/KostenEinesSection/config'
 import CtaSection from '@/app/components/CtaSection/config'
 import { revalidatekosten_finanzierung } from './hooks/revalidatekosten&finanzierung'
+import FinanzierungSection from '@/app/components/FinanzierungSection/config'
 
 export const kosten_finanzierung: GlobalConfig = {
   slug: 'kosten-finanzierung',
@@ -71,6 +72,13 @@ export const kosten_finanzierung: GlobalConfig = {
             de: '',
           },
           fields: [KostenEinesSection],
+        },
+        {
+          label: {
+            en: 'Finanzierung Section',
+            de: '',
+          },
+          fields: [FinanzierungSection],
         },
         {
           label: {

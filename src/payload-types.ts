@@ -908,6 +908,69 @@ export interface KostenFinanzierung {
           id?: string | null;
         }[]
       | null;
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  FinanzierungSection?: {
+    FinanzierungImage?: (string | null) | Media;
+    Heading?: string | null;
+    SubHeading?: string | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    Finanzierung_carousel?:
+      | {
+          Heading?: string | null;
+          SubHeading?: string | null;
+          euro?: string | null;
+          richText?: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[]
+      | null;
+    Finanzierung_link?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
   };
   CtaSection?: {
     CtaImage?: (string | null) | Media;
@@ -1380,6 +1443,31 @@ export interface KostenFinanzierungSelect<T extends boolean = true> {
               euro?: T;
               richText?: T;
               id?: T;
+            };
+        description?: T;
+      };
+  FinanzierungSection?:
+    | T
+    | {
+        FinanzierungImage?: T;
+        Heading?: T;
+        SubHeading?: T;
+        richText?: T;
+        Finanzierung_carousel?:
+          | T
+          | {
+              Heading?: T;
+              SubHeading?: T;
+              euro?: T;
+              richText?: T;
+              id?: T;
+            };
+        Finanzierung_link?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
             };
       };
   CtaSection?:
