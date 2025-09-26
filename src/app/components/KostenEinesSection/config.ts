@@ -106,6 +106,23 @@ export const KostenEinesSection: Field = {
         },
       ],
     },
+    {
+      name: 'description',
+      type: 'richText',
+      label: {
+        en: 'Rich Text',
+        de: 'Textinhalt',
+      },
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [
+          ...defaultFeatures,
+          HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+          FixedToolbarFeature(),
+          InlineToolbarFeature(),
+          EXPERIMENTAL_TableFeature(),
+        ],
+      }),
+    },
   ],
 }
 
