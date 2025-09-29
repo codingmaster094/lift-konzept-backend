@@ -51,7 +51,7 @@ export const Hero: Field = {
       name: 'showPoints',
       type: 'checkbox',
       label: 'Show Points',
-      defaultValue: false,
+      defaultValue: true,
     },
     {
       name: 'richText',

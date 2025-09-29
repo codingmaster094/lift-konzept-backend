@@ -10,6 +10,7 @@ import sharp from 'sharp'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Posts } from './collections/posts'
+import { Ratgeber } from './collections/ratgeber'
 import { Header } from './globals/Header/config'
 import { Footer } from './globals/Footer/config'
 import { menus } from './globals/menus/config'
@@ -44,7 +45,7 @@ export default buildConfig({
     },
   },
   cors: ['https://lift-konzept-backend.vercel.app'],
-  collections: [Users, Media, Posts],
+  collections: [Users, Media, Posts, Ratgeber],
   globals: [
     Header,
     Footer,

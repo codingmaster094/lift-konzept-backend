@@ -452,6 +452,8 @@ export interface Home {
     heroImage?: (string | null) | Media;
     Heading?: string | null;
     SubHeading?: string | null;
+    showParagraph?: boolean | null;
+    showPoints?: boolean | null;
     richText?: {
       root: {
         type: string;
@@ -673,6 +675,8 @@ export interface Treppenlifte {
     heroImage?: (string | null) | Media;
     Heading?: string | null;
     SubHeading?: string | null;
+    showParagraph?: boolean | null;
+    showPoints?: boolean | null;
     richText?: {
       root: {
         type: string;
@@ -820,6 +824,8 @@ export interface KostenFinanzierung {
     heroImage?: (string | null) | Media;
     Heading?: string | null;
     SubHeading?: string | null;
+    showParagraph?: boolean | null;
+    showPoints?: boolean | null;
     richText?: {
       root: {
         type: string;
@@ -1019,6 +1025,8 @@ export interface TreppenlifteRatgeber {
     heroImage?: (string | null) | Media;
     Heading?: string | null;
     SubHeading?: string | null;
+    showParagraph?: boolean | null;
+    showPoints?: boolean | null;
     richText?: {
       root: {
         type: string;
@@ -1225,6 +1233,8 @@ export interface HomeSelect<T extends boolean = true> {
         heroImage?: T;
         Heading?: T;
         SubHeading?: T;
+        showParagraph?: T;
+        showPoints?: T;
         richText?: T;
         hero_link?:
           | T
@@ -1371,6 +1381,8 @@ export interface TreppenlifteSelect<T extends boolean = true> {
         heroImage?: T;
         Heading?: T;
         SubHeading?: T;
+        showParagraph?: T;
+        showPoints?: T;
         richText?: T;
         hero_link?:
           | T
@@ -1482,6 +1494,8 @@ export interface KostenFinanzierungSelect<T extends boolean = true> {
         heroImage?: T;
         Heading?: T;
         SubHeading?: T;
+        showParagraph?: T;
+        showPoints?: T;
         richText?: T;
         hero_link?:
           | T
@@ -1605,6 +1619,8 @@ export interface TreppenlifteRatgeberSelect<T extends boolean = true> {
         heroImage?: T;
         Heading?: T;
         SubHeading?: T;
+        showParagraph?: T;
+        showPoints?: T;
         richText?: T;
         hero_link?:
           | T
