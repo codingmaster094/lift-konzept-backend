@@ -1,4 +1,6 @@
+import { BlogAbout } from '@/app/components/blog-About/config'
 import { CompanyLogo } from '@/app/components/comapntLogos/config'
+import { Contents } from '@/app/components/contents/config'
 import CtaSection from '@/app/components/CtaSection/config'
 import { Hero } from '@/app/components/Hero/config'
 import type { CollectionConfig } from 'payload'
@@ -89,16 +91,29 @@ export const Ratgeber: CollectionConfig = {
         },
         {
           label: {
-            en: 'Partner Logo',
-            de: 'Partnerlogo',
+            en: 'Comapny Logo',
+            de: '',
           },
           fields: [CompanyLogo],
         },
-
+        {
+          label: {
+            en: 'Blog About',
+            de: 'Über den Blog',
+          },
+          fields: [BlogAbout],
+        },
+        {
+          label: {
+            en: 'Content',
+            de: 'Inhalt',
+          },
+          fields: [Contents],
+        },
         {
           label: {
             en: 'CTA',
-            de: 'Handlungsaufforderung',
+            de: '',
           },
           fields: [CtaSection],
         },
