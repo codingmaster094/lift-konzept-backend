@@ -42,6 +42,18 @@ export const Hero: Field = {
       },
     },
     {
+      name: 'showParagraph',
+      type: 'checkbox',
+      label: 'Show Paragraph',
+      defaultValue: false,
+    },
+    {
+      name: 'showPoints',
+      type: 'checkbox',
+      label: 'Show Points',
+      defaultValue: false,
+    },
+    {
       name: 'richText',
       type: 'richText',
       label: {
