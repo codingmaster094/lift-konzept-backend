@@ -2,22 +2,22 @@ import type { CollectionConfig } from 'payload'
 import slugify from 'slugify'
 
 export const Ratgeber: CollectionConfig = {
-  slug: 'posts',
+  slug: 'ratgeber',
   labels: {
     singular: {
-      en: 'Post',
-      de: 'Beitrag',
+      en: 'ratgeber',
+      de: '',
     },
     plural: {
-      en: 'Posts',
-      de: 'Beiträge',
+      en: 'ratgeber',
+      de: '',
     },
   },
   admin: {
     useAsTitle: 'title',
     preview: (doc) => {
       if (!doc?.slug) return null
-      return `https://protrance-backend-main.vercel.app/posts/${doc.slug}`
+      return `https://lift-konzept-backend.vercel.app/posts/${doc.slug}`
     },
   },
   access: {
