@@ -16,6 +16,7 @@ import { menus } from './globals/menus/config'
 import { HomePage } from './globals/home/config'
 import { TreppenliftePage } from './globals/treppenlifte/config'
 import { kosten_finanzierung } from './globals/kosten&finanzierung/config'
+import { Treppenlifte_Ratgeber } from './globals/trappenlift_ratgeber/config'
 
 // i18n
 import { en } from '@payloadcms/translations/languages/en'
@@ -44,7 +45,15 @@ export default buildConfig({
   },
   cors: ['https://lift-konzept-backend.vercel.app'],
   collections: [Users, Media, Posts],
-  globals: [Header, Footer, menus, HomePage, TreppenliftePage, kosten_finanzierung],
+  globals: [
+    Header,
+    Footer,
+    menus,
+    HomePage,
+    TreppenliftePage,
+    kosten_finanzierung,
+    Treppenlifte_Ratgeber,
+  ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || 'f104b2795f431aae94c77d75',
   typescript: {

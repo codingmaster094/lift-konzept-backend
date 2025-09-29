@@ -93,6 +93,7 @@ export interface Config {
     home: Home;
     treppenlifte: Treppenlifte;
     'kosten-finanzierung': KostenFinanzierung;
+    'treppenlifte-ratgeber': TreppenlifteRatgeber;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
@@ -101,6 +102,7 @@ export interface Config {
     home: HomeSelect<false> | HomeSelect<true>;
     treppenlifte: TreppenlifteSelect<false> | TreppenlifteSelect<true>;
     'kosten-finanzierung': KostenFinanzierungSelect<false> | KostenFinanzierungSelect<true>;
+    'treppenlifte-ratgeber': TreppenlifteRatgeberSelect<false> | TreppenlifteRatgeberSelect<true>;
   };
   locale: null;
   user: User & {
@@ -1007,6 +1009,100 @@ export interface KostenFinanzierung {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "treppenlifte-ratgeber".
+ */
+export interface TreppenlifteRatgeber {
+  id: string;
+  title?: string | null;
+  slug: string;
+  hero?: {
+    heroImage?: (string | null) | Media;
+    Heading?: string | null;
+    SubHeading?: string | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    hero_link?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+    isHeroformSection?: boolean | null;
+    heroformsection_Heading?: string | null;
+    heroformsection_items?:
+      | {
+          heroformsection_main_Image?: (string | null) | Media;
+          heroformsection_main_link?: {
+            label?: string | null;
+            url?: string | null;
+            target?: ('_self' | '_blank') | null;
+          };
+          id?: string | null;
+        }[]
+      | null;
+    heroformsection_redirect_Image?: (string | null) | Media;
+    heroformsection_redirect_link?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+  };
+  companyLogo?: {
+    logos?:
+      | {
+          logoImage?: (string | null) | Media;
+          url?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  CtaSection?: {
+    CtaImage?: (string | null) | Media;
+    Heading?: string | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    cta_link1?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+    cta_link2?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+  };
+  publishedAt?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header_select".
  */
 export interface HeaderSelect<T extends boolean = true> {
@@ -1468,6 +1564,88 @@ export interface KostenFinanzierungSelect<T extends boolean = true> {
               label?: T;
               url?: T;
               target?: T;
+            };
+      };
+  CtaSection?:
+    | T
+    | {
+        CtaImage?: T;
+        Heading?: T;
+        richText?: T;
+        cta_link1?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+        cta_link2?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+      };
+  publishedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "treppenlifte-ratgeber_select".
+ */
+export interface TreppenlifteRatgeberSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  hero?:
+    | T
+    | {
+        heroImage?: T;
+        Heading?: T;
+        SubHeading?: T;
+        richText?: T;
+        hero_link?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+        isHeroformSection?: T;
+        heroformsection_Heading?: T;
+        heroformsection_items?:
+          | T
+          | {
+              heroformsection_main_Image?: T;
+              heroformsection_main_link?:
+                | T
+                | {
+                    label?: T;
+                    url?: T;
+                    target?: T;
+                  };
+              id?: T;
+            };
+        heroformsection_redirect_Image?: T;
+        heroformsection_redirect_link?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+      };
+  companyLogo?:
+    | T
+    | {
+        logos?:
+          | T
+          | {
+              logoImage?: T;
+              url?: T;
+              id?: T;
             };
       };
   CtaSection?:
