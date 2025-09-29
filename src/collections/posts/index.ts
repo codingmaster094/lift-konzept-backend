@@ -1,3 +1,6 @@
+import { CompanyLogo } from '@/app/components/comapntLogos/config'
+import CtaSection from '@/app/components/CtaSection/config'
+import { Hero } from '@/app/components/Hero/config'
 import type { CollectionConfig } from 'payload'
 import slugify from 'slugify'
 
@@ -76,7 +79,30 @@ export const Posts: CollectionConfig = {
 
     {
       type: 'tabs',
-      tabs: [],
+      tabs: [
+       {
+          label: {
+            en: 'Hero',
+            de: 'Held',
+          },
+          fields: [Hero],
+        },
+        {
+          label: {
+            en: 'Partner Logo',
+            de: 'Partnerlogo',
+          },
+          fields: [CompanyLogo],
+        },
+
+        {
+          label: {
+            en: 'CTA',
+            de: 'Handlungsaufforderung',
+          },
+          fields: [CtaSection],
+        },
+      ],
     },
     {
       name: 'publishedDate',
