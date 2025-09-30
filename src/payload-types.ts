@@ -437,13 +437,14 @@ export interface Ratgeber {
     type?: ('none' | 'highImpact' | 'mediumImpact' | 'lowImpact') | null;
     media?: (string | null) | Media;
   };
-  faq?: {
+  FaqSection?: {
     enableFAQ?: boolean | null;
-    title?: string | null;
-    nestedfaq?:
+    Heading?: string | null;
+    SubHeading?: string | null;
+    FaqContent?:
       | {
           title?: string | null;
-          description?: {
+          richText?: {
             root: {
               type: string;
               children: {
@@ -766,16 +767,17 @@ export interface RatgeberSelect<T extends boolean = true> {
         type?: T;
         media?: T;
       };
-  faq?:
+  FaqSection?:
     | T
     | {
         enableFAQ?: T;
-        title?: T;
-        nestedfaq?:
+        Heading?: T;
+        SubHeading?: T;
+        FaqContent?:
           | T
           | {
               title?: T;
-              description?: T;
+              richText?: T;
               id?: T;
             };
       };
@@ -1084,6 +1086,7 @@ export interface Home {
       | null;
   };
   FaqSection?: {
+    enableFAQ?: boolean | null;
     Heading?: string | null;
     SubHeading?: string | null;
     FaqContent?:
@@ -1810,6 +1813,7 @@ export interface HomeSelect<T extends boolean = true> {
   FaqSection?:
     | T
     | {
+        enableFAQ?: T;
         Heading?: T;
         SubHeading?: T;
         FaqContent?:

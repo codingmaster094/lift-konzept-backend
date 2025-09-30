@@ -2,7 +2,7 @@ import { BlogAbout } from '@/app/components/blog-About/config'
 import { CompanyLogo } from '@/app/components/comapntLogos/config'
 import { Contents } from '@/app/components/contents/config'
 import CtaSection from '@/app/components/CtaSection/config'
-import { faq } from '@/app/components/faq/config'
+import FaqSection from '@/app/components/FaqSection/config'
 import { Hero } from '@/app/components/Hero/config'
 import { richTextData } from '@/app/components/richText/config'
 import type { CollectionConfig } from 'payload'
@@ -132,7 +132,7 @@ export const Ratgeber: CollectionConfig = {
             en: 'FAQ',
             de: 'Häufige Fragen',
           },
-          fields: [faq],
+          fields: [FaqSection],
         },
       ],
     },

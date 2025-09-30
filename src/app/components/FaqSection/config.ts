@@ -16,6 +16,15 @@ export const FaqSection: Field = {
   },
   fields: [
     {
+      name: 'enableFAQ',
+      type: 'checkbox',
+      label: {
+        en: 'Enable FAQ Section',
+        de: 'FAQ-Bereich aktivieren',
+      },
+      defaultValue: true,
+    },
+    {
       name: 'Heading',
       type: 'text',
       label: {
