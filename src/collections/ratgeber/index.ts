@@ -105,17 +105,17 @@ export const Ratgeber: CollectionConfig = {
         },
         {
           label: {
-            en: 'Content',
-            de: 'Inhalt',
-          },
-          fields: [Contents],
-        },
-        {
-          label: {
             en: 'CTA',
             de: '',
           },
           fields: [CtaSection],
+        },
+        {
+          label: {
+            en: 'Content',
+            de: 'Inhalt',
+          },
+          fields: [Contents],
         },
       ],
     },

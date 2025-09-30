@@ -189,6 +189,90 @@ export interface Post {
    * Auto-generated from title if left blank
    */
   slug: string;
+  hero?: {
+    heroImage?: (string | null) | Media;
+    Heading?: string | null;
+    SubHeading?: string | null;
+    showParagraph?: boolean | null;
+    showPoints?: boolean | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    hero_link?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+    isHeroformSection?: boolean | null;
+    heroformsection_Heading?: string | null;
+    heroformsection_items?:
+      | {
+          heroformsection_main_Image?: (string | null) | Media;
+          heroformsection_main_link?: {
+            label?: string | null;
+            url?: string | null;
+            target?: ('_self' | '_blank') | null;
+          };
+          id?: string | null;
+        }[]
+      | null;
+    heroformsection_redirect_Image?: (string | null) | Media;
+    heroformsection_redirect_link?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+  };
+  companyLogo?: {
+    logos?:
+      | {
+          logoImage?: (string | null) | Media;
+          url?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  CtaSection?: {
+    CtaImage?: (string | null) | Media;
+    Heading?: string | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    cta_link1?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+    cta_link2?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+  };
   publishedDate?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -205,6 +289,136 @@ export interface Ratgeber {
    * Auto-generated from title if left blank
    */
   slug: string;
+  hero?: {
+    heroImage?: (string | null) | Media;
+    Heading?: string | null;
+    SubHeading?: string | null;
+    showParagraph?: boolean | null;
+    showPoints?: boolean | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    hero_link?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+    isHeroformSection?: boolean | null;
+    heroformsection_Heading?: string | null;
+    heroformsection_items?:
+      | {
+          heroformsection_main_Image?: (string | null) | Media;
+          heroformsection_main_link?: {
+            label?: string | null;
+            url?: string | null;
+            target?: ('_self' | '_blank') | null;
+          };
+          id?: string | null;
+        }[]
+      | null;
+    heroformsection_redirect_Image?: (string | null) | Media;
+    heroformsection_redirect_link?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+  };
+  companyLogo?: {
+    logos?:
+      | {
+          logoImage?: (string | null) | Media;
+          url?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  Blog_About?: {
+    headding?: string | null;
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    link?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+    type?: ('none' | 'highImpact' | 'mediumImpact' | 'lowImpact') | null;
+    media?: (string | null) | Media;
+  };
+  CtaSection?: {
+    CtaImage?: (string | null) | Media;
+    Heading?: string | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    cta_link1?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+    cta_link2?: {
+      label?: string | null;
+      url?: string | null;
+      target?: ('_self' | '_blank') | null;
+    };
+  };
+  contents?: {
+    Gutenberg?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+    Gutenberg_html?: string | null;
+    Featured_image?: (string | null) | Media;
+    type?: ('none' | 'highImpact' | 'mediumImpact' | 'lowImpact') | null;
+    media?: (string | null) | Media;
+  };
   publishedDate?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -323,6 +537,78 @@ export interface PostsSelect<T extends boolean = true> {
   authors?: T;
   title?: T;
   slug?: T;
+  hero?:
+    | T
+    | {
+        heroImage?: T;
+        Heading?: T;
+        SubHeading?: T;
+        showParagraph?: T;
+        showPoints?: T;
+        richText?: T;
+        hero_link?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+        isHeroformSection?: T;
+        heroformsection_Heading?: T;
+        heroformsection_items?:
+          | T
+          | {
+              heroformsection_main_Image?: T;
+              heroformsection_main_link?:
+                | T
+                | {
+                    label?: T;
+                    url?: T;
+                    target?: T;
+                  };
+              id?: T;
+            };
+        heroformsection_redirect_Image?: T;
+        heroformsection_redirect_link?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+      };
+  companyLogo?:
+    | T
+    | {
+        logos?:
+          | T
+          | {
+              logoImage?: T;
+              url?: T;
+              id?: T;
+            };
+      };
+  CtaSection?:
+    | T
+    | {
+        CtaImage?: T;
+        Heading?: T;
+        richText?: T;
+        cta_link1?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+        cta_link2?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+      };
   publishedDate?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -335,6 +621,102 @@ export interface RatgeberSelect<T extends boolean = true> {
   authors?: T;
   title?: T;
   slug?: T;
+  hero?:
+    | T
+    | {
+        heroImage?: T;
+        Heading?: T;
+        SubHeading?: T;
+        showParagraph?: T;
+        showPoints?: T;
+        richText?: T;
+        hero_link?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+        isHeroformSection?: T;
+        heroformsection_Heading?: T;
+        heroformsection_items?:
+          | T
+          | {
+              heroformsection_main_Image?: T;
+              heroformsection_main_link?:
+                | T
+                | {
+                    label?: T;
+                    url?: T;
+                    target?: T;
+                  };
+              id?: T;
+            };
+        heroformsection_redirect_Image?: T;
+        heroformsection_redirect_link?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+      };
+  companyLogo?:
+    | T
+    | {
+        logos?:
+          | T
+          | {
+              logoImage?: T;
+              url?: T;
+              id?: T;
+            };
+      };
+  Blog_About?:
+    | T
+    | {
+        headding?: T;
+        description?: T;
+        link?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+        type?: T;
+        media?: T;
+      };
+  CtaSection?:
+    | T
+    | {
+        CtaImage?: T;
+        Heading?: T;
+        richText?: T;
+        cta_link1?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+        cta_link2?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              target?: T;
+            };
+      };
+  contents?:
+    | T
+    | {
+        Gutenberg?: T;
+        Gutenberg_html?: T;
+        Featured_image?: T;
+        type?: T;
+        media?: T;
+      };
   publishedDate?: T;
   updatedAt?: T;
   createdAt?: T;
