@@ -346,6 +346,7 @@ export interface Ratgeber {
   };
   Blog_About?: {
     headding?: string | null;
+    SubHeadding?: string | null;
     description?: {
       root: {
         type: string;
@@ -676,6 +677,7 @@ export interface RatgeberSelect<T extends boolean = true> {
     | T
     | {
         headding?: T;
+        SubHeadding?: T;
         description?: T;
         link?:
           | T
