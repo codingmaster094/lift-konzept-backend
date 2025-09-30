@@ -344,6 +344,23 @@ export interface Ratgeber {
         }[]
       | null;
   };
+  richText?: {
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
   Blog_About?: {
     headding?: string | null;
     SubHeadding?: string | null;
@@ -419,6 +436,31 @@ export interface Ratgeber {
     Featured_image?: (string | null) | Media;
     type?: ('none' | 'highImpact' | 'mediumImpact' | 'lowImpact') | null;
     media?: (string | null) | Media;
+  };
+  faq?: {
+    enableFAQ?: boolean | null;
+    title?: string | null;
+    nestedfaq?:
+      | {
+          title?: string | null;
+          description?: {
+            root: {
+              type: string;
+              children: {
+                type: string;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[]
+      | null;
   };
   publishedDate?: string | null;
   updatedAt: string;
@@ -673,6 +715,11 @@ export interface RatgeberSelect<T extends boolean = true> {
               id?: T;
             };
       };
+  richText?:
+    | T
+    | {
+        description?: T;
+      };
   Blog_About?:
     | T
     | {
@@ -718,6 +765,19 @@ export interface RatgeberSelect<T extends boolean = true> {
         Featured_image?: T;
         type?: T;
         media?: T;
+      };
+  faq?:
+    | T
+    | {
+        enableFAQ?: T;
+        title?: T;
+        nestedfaq?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              id?: T;
+            };
       };
   publishedDate?: T;
   updatedAt?: T;

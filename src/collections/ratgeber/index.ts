@@ -4,6 +4,7 @@ import { Contents } from '@/app/components/contents/config'
 import CtaSection from '@/app/components/CtaSection/config'
 import { faq } from '@/app/components/faq/config'
 import { Hero } from '@/app/components/Hero/config'
+import { richTextData } from '@/app/components/richText/config'
 import type { CollectionConfig } from 'payload'
 import slugify from 'slugify'
 
@@ -97,6 +98,14 @@ export const Ratgeber: CollectionConfig = {
           },
           fields: [CompanyLogo],
         },
+        {
+          label: {
+            en: 'Description',
+            de: '',
+          },
+          fields: [richTextData],
+        },
+
         {
           label: {
             en: 'Blog About',
