@@ -96,6 +96,8 @@ export interface Config {
     treppenlifte: Treppenlifte;
     'kosten-finanzierung': KostenFinanzierung;
     'treppenlifte-ratgeber': TreppenlifteRatgeber;
+    impressum: Impressum;
+    datenschutzerklarung: Datenschutzerklarung;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
@@ -105,6 +107,8 @@ export interface Config {
     treppenlifte: TreppenlifteSelect<false> | TreppenlifteSelect<true>;
     'kosten-finanzierung': KostenFinanzierungSelect<false> | KostenFinanzierungSelect<true>;
     'treppenlifte-ratgeber': TreppenlifteRatgeberSelect<false> | TreppenlifteRatgeberSelect<true>;
+    impressum: ImpressumSelect<false> | ImpressumSelect<true>;
+    datenschutzerklarung: DatenschutzerklarungSelect<false> | DatenschutzerklarungSelect<true>;
   };
   locale: null;
   user: User & {
@@ -1592,6 +1596,64 @@ export interface TreppenlifteRatgeber {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "impressum".
+ */
+export interface Impressum {
+  id: string;
+  title?: string | null;
+  slug: string;
+  richText?: {
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  publishedAt?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "datenschutzerklarung".
+ */
+export interface Datenschutzerklarung {
+  id: string;
+  title?: string | null;
+  slug: string;
+  richText?: {
+    description?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  publishedAt?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header_select".
  */
 export interface HeaderSelect<T extends boolean = true> {
@@ -2166,6 +2228,40 @@ export interface TreppenlifteRatgeberSelect<T extends boolean = true> {
               url?: T;
               target?: T;
             };
+      };
+  publishedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "impressum_select".
+ */
+export interface ImpressumSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  richText?:
+    | T
+    | {
+        description?: T;
+      };
+  publishedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "datenschutzerklarung_select".
+ */
+export interface DatenschutzerklarungSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  richText?:
+    | T
+    | {
+        description?: T;
       };
   publishedAt?: T;
   updatedAt?: T;

@@ -22,6 +22,8 @@ import { Treppenlifte_Ratgeber } from './globals/trappenlift_ratgeber/config'
 // i18n
 import { en } from '@payloadcms/translations/languages/en'
 import { de } from '@payloadcms/translations/languages/de'
+import { Impressum } from './globals/impressum/config'
+import { Datenschutzerklärung } from './globals/datenschutzerklärung/config'
 
 // __dirname fix for ESM
 const filename = fileURLToPath(import.meta.url)
@@ -54,6 +56,8 @@ export default buildConfig({
     TreppenliftePage,
     kosten_finanzierung,
     Treppenlifte_Ratgeber,
+    Impressum,
+    Datenschutzerklärung,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || 'f104b2795f431aae94c77d75',
