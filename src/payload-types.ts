@@ -1602,8 +1602,8 @@ export interface Impressum {
   id: string;
   title?: string | null;
   slug: string;
-  richText?: {
-    description?: {
+  contents?: {
+    Gutenberg?: {
       root: {
         type: string;
         children: {
@@ -1618,6 +1618,10 @@ export interface Impressum {
       };
       [k: string]: unknown;
     } | null;
+    Gutenberg_html?: string | null;
+    Featured_image?: (string | null) | Media;
+    type?: ('none' | 'highImpact' | 'mediumImpact' | 'lowImpact') | null;
+    media?: (string | null) | Media;
   };
   publishedAt?: string | null;
   updatedAt?: string | null;
@@ -1631,8 +1635,8 @@ export interface Datenschutzerklarung {
   id: string;
   title?: string | null;
   slug: string;
-  richText?: {
-    description?: {
+  contents?: {
+    Gutenberg?: {
       root: {
         type: string;
         children: {
@@ -1647,6 +1651,10 @@ export interface Datenschutzerklarung {
       };
       [k: string]: unknown;
     } | null;
+    Gutenberg_html?: string | null;
+    Featured_image?: (string | null) | Media;
+    type?: ('none' | 'highImpact' | 'mediumImpact' | 'lowImpact') | null;
+    media?: (string | null) | Media;
   };
   publishedAt?: string | null;
   updatedAt?: string | null;
@@ -2241,10 +2249,14 @@ export interface TreppenlifteRatgeberSelect<T extends boolean = true> {
 export interface ImpressumSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  richText?:
+  contents?:
     | T
     | {
-        description?: T;
+        Gutenberg?: T;
+        Gutenberg_html?: T;
+        Featured_image?: T;
+        type?: T;
+        media?: T;
       };
   publishedAt?: T;
   updatedAt?: T;
@@ -2258,10 +2270,14 @@ export interface ImpressumSelect<T extends boolean = true> {
 export interface DatenschutzerklarungSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  richText?:
+  contents?:
     | T
     | {
-        description?: T;
+        Gutenberg?: T;
+        Gutenberg_html?: T;
+        Featured_image?: T;
+        type?: T;
+        media?: T;
       };
   publishedAt?: T;
   updatedAt?: T;

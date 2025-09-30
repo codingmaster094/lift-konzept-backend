@@ -1,7 +1,7 @@
 import type { GlobalConfig } from 'payload'
 import slugify from 'slugify'
 import { revalidateDatenschutzerklärung } from './hooks/revalidateDatenschutzerklärung'
-import { richTextData } from '@/app/components/richText/config'
+import { Contents } from '@/app/components/contents/config'
 
 export const Datenschutzerklärung: GlobalConfig = {
   slug: 'datenschutzerklarung',
@@ -53,7 +53,7 @@ export const Datenschutzerklärung: GlobalConfig = {
             en: 'Content',
             de: '',
           },
-          fields: [richTextData],
+          fields: [Contents],
         },
       ],
     },

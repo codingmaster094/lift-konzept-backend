@@ -1,7 +1,7 @@
 import type { GlobalConfig } from 'payload'
 import slugify from 'slugify'
 import { revalidateImpressum } from './hooks/revalidateImpressum'
-import { richTextData } from '@/app/components/richText/config'
+import { Contents } from '@/app/components/contents/config'
 
 export const Impressum: GlobalConfig = {
   slug: 'impressum',
@@ -53,7 +53,7 @@ export const Impressum: GlobalConfig = {
             en: 'Content',
             de: '',
           },
-          fields: [richTextData],
+          fields: [Contents],
         },
       ],
     },

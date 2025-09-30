@@ -11,16 +11,16 @@ export const richTextData: Field = {
   name: 'richText',
   type: 'group',
   label: {
-    en: '',
-    de: '',
+    en: 'FAQ Section',
+    de: 'FAQ Abschnitt',
   },
   fields: [
     {
       name: 'description',
       type: 'richText',
       label: {
-        en: '',
-        de: '',
+        en: 'Answer',
+        de: 'Antwort',
       },
       editor: lexicalEditor({
         features: ({ defaultFeatures }) => [
