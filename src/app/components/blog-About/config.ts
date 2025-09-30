@@ -26,6 +26,16 @@ export const BlogAbout: Field = {
       },
     },
     {
+      name: 'SubHeadding',
+      type: 'text',
+      required: false,
+      localized: true,
+      label: {
+        en: 'Sub Heading',
+        de: 'Überschrift',
+      },
+    },
+    {
       name: 'description',
       type: 'richText',
       localized: true,
