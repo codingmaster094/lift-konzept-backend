@@ -56,17 +56,6 @@ export const SEO: Field = {
                   name: 'Protrance',
                   url: 'https://rauchfreidurchhypnose.de/',
                   email: 'info@protrance.de',
-                  logo: {
-                    '@type': 'ImageObject',
-                    '@id': 'https://protrance.de/#logo',
-                    url: 'https://rauchfreidurchhypnose.de/wp-content/uploads/2021/07/1024x1024_fav_1024x1024_logomark-1.png',
-                    contentUrl:
-                      'https://rauchfreidurchhypnose.de/wp-content/uploads/2021/07/1024x1024_fav_1024x1024_logomark-1.png',
-                    caption: 'Protrance',
-                    inLanguage: 'de',
-                    width: 1024,
-                    height: 1024,
-                  },
                   address: {
                     '@type': 'PostalAddress',
                     streetAddress: 'Alte Poststr. 12',

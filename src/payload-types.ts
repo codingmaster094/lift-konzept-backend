@@ -292,6 +292,26 @@ export interface Post {
       target?: ('_self' | '_blank') | null;
     };
   };
+  seo?: {
+    meta?: {
+      title?: string | null;
+      description?: string | null;
+      /**
+       * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+       */
+      image?: (string | null) | Media;
+      canonicalUrl?: string | null;
+    };
+    structuredData?:
+      | {
+          [k: string]: unknown;
+        }
+      | unknown[]
+      | string
+      | number
+      | boolean
+      | null;
+  };
   publishedDate?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -480,6 +500,26 @@ export interface Ratgeber {
           } | null;
           id?: string | null;
         }[]
+      | null;
+  };
+  seo?: {
+    meta?: {
+      title?: string | null;
+      description?: string | null;
+      /**
+       * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+       */
+      image?: (string | null) | Media;
+      canonicalUrl?: string | null;
+    };
+    structuredData?:
+      | {
+          [k: string]: unknown;
+        }
+      | unknown[]
+      | string
+      | number
+      | boolean
       | null;
   };
   publishedDate?: string | null;
@@ -686,6 +726,19 @@ export interface PostsSelect<T extends boolean = true> {
               target?: T;
             };
       };
+  seo?:
+    | T
+    | {
+        meta?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              image?: T;
+              canonicalUrl?: T;
+            };
+        structuredData?: T;
+      };
   publishedDate?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -813,6 +866,19 @@ export interface RatgeberSelect<T extends boolean = true> {
               richText?: T;
               id?: T;
             };
+      };
+  seo?:
+    | T
+    | {
+        meta?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              image?: T;
+              canonicalUrl?: T;
+            };
+        structuredData?: T;
       };
   publishedDate?: T;
   updatedAt?: T;
@@ -960,6 +1026,7 @@ export interface Menu {
 export interface Home {
   id: string;
   title?: string | null;
+  author?: (string | null) | User;
   relatedPage?: (string | null) | Page;
   slug: string;
   hero?: {
@@ -1205,6 +1272,7 @@ export interface Home {
 export interface Treppenlifte {
   id: string;
   title?: string | null;
+  author?: (string | null) | User;
   relatedPage?: (string | null) | Page;
   slug: string;
   hero?: {
@@ -1375,6 +1443,7 @@ export interface Treppenlifte {
 export interface KostenFinanzierung {
   id: string;
   title?: string | null;
+  author?: (string | null) | User;
   relatedPage?: (string | null) | Page;
   slug: string;
   hero?: {
@@ -1597,6 +1666,7 @@ export interface KostenFinanzierung {
 export interface TreppenlifteRatgeber {
   id: string;
   title?: string | null;
+  author?: (string | null) | User;
   relatedPage?: (string | null) | Page;
   slug: string;
   hero?: {
@@ -1714,6 +1784,7 @@ export interface TreppenlifteRatgeber {
 export interface Impressum {
   id: string;
   title?: string | null;
+  author?: (string | null) | User;
   relatedPage?: (string | null) | Page;
   slug: string;
   contents?: {
@@ -1768,6 +1839,7 @@ export interface Impressum {
 export interface Datenschutzerklarung {
   id: string;
   title?: string | null;
+  author?: (string | null) | User;
   relatedPage?: (string | null) | Page;
   slug: string;
   contents?: {
@@ -1821,6 +1893,7 @@ export interface Datenschutzerklarung {
  */
 export interface Robot {
   id: string;
+  author?: (string | null) | User;
   relatedPage?: (string | null) | Page;
   robots?: string | null;
   updatedAt?: string | null;
@@ -1943,6 +2016,7 @@ export interface MenusSelect<T extends boolean = true> {
  */
 export interface HomeSelect<T extends boolean = true> {
   title?: T;
+  author?: T;
   relatedPage?: T;
   slug?: T;
   hero?:
@@ -2106,6 +2180,7 @@ export interface HomeSelect<T extends boolean = true> {
  */
 export interface TreppenlifteSelect<T extends boolean = true> {
   title?: T;
+  author?: T;
   relatedPage?: T;
   slug?: T;
   hero?:
@@ -2233,6 +2308,7 @@ export interface TreppenlifteSelect<T extends boolean = true> {
  */
 export interface KostenFinanzierungSelect<T extends boolean = true> {
   title?: T;
+  author?: T;
   relatedPage?: T;
   slug?: T;
   hero?:
@@ -2372,6 +2448,7 @@ export interface KostenFinanzierungSelect<T extends boolean = true> {
  */
 export interface TreppenlifteRatgeberSelect<T extends boolean = true> {
   title?: T;
+  author?: T;
   relatedPage?: T;
   slug?: T;
   hero?:
@@ -2470,6 +2547,7 @@ export interface TreppenlifteRatgeberSelect<T extends boolean = true> {
  */
 export interface ImpressumSelect<T extends boolean = true> {
   title?: T;
+  author?: T;
   relatedPage?: T;
   slug?: T;
   contents?:
@@ -2505,6 +2583,7 @@ export interface ImpressumSelect<T extends boolean = true> {
  */
 export interface DatenschutzerklarungSelect<T extends boolean = true> {
   title?: T;
+  author?: T;
   relatedPage?: T;
   slug?: T;
   contents?:
@@ -2539,6 +2618,7 @@ export interface DatenschutzerklarungSelect<T extends boolean = true> {
  * via the `definition` "robots_select".
  */
 export interface RobotsSelect<T extends boolean = true> {
+  author?: T;
   relatedPage?: T;
   robots?: T;
   updatedAt?: T;

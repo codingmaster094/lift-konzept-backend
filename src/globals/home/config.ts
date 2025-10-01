@@ -31,16 +31,29 @@ export const HomePage: GlobalConfig = {
       },
     },
     {
-      name: 'relatedPage', // Choose a descriptive name
+      name: 'author',
       type: 'relationship',
-      relationTo: 'pages', // This must match the slug of the collection you're linking to
-      maxDepth: 0, // Optional: useful if you only need the ID and slug
+      relationTo: 'users', // or 'authors' if you have a separate authors collection
+      hasMany: false, // single author
+      label: {
+        en: 'Author',
+        de: 'Autor',
+      },
+      admin: {
+        position: 'sidebar', // shows in the sidebar
+      },
+    },
+    {
+      name: 'relatedPage',
+      type: 'relationship',
+      relationTo: 'pages',
+      maxDepth: 0,
       label: {
         en: 'Link to a Page',
         de: 'Mit einer Seite verknüpfen',
       },
       admin: {
-        position: 'sidebar', // REMOVED: In v3.x, useAsTitle goes on the 'pages' collection config, not here.
+        position: 'sidebar',
       },
     },
     {

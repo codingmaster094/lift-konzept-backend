@@ -28,6 +28,19 @@ export const TreppenliftePage: GlobalConfig = {
       },
     },
     {
+      name: 'author',
+      type: 'relationship',
+      relationTo: 'users', // or 'authors' if you have a separate authors collection
+      hasMany: false, // single author
+      label: {
+        en: 'Author',
+        de: 'Autor',
+      },
+      admin: {
+        position: 'sidebar', // shows in the sidebar
+      },
+    },
+    {
       name: 'relatedPage', // Choose a descriptive name
       type: 'relationship',
       relationTo: 'pages', // This must match the slug of the collection you're linking to
@@ -102,12 +115,12 @@ export const TreppenliftePage: GlobalConfig = {
           fields: [TreppenliftGallery],
         },
         {
-                  label: {
-                    en: 'SEO',
-                    de: 'SEO',
-                  },
-                  fields: [SEO],
-                },
+          label: {
+            en: 'SEO',
+            de: 'SEO',
+          },
+          fields: [SEO],
+        },
       ],
     },
     {
