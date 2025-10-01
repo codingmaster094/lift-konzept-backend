@@ -39,7 +39,7 @@ export const HomePage: GlobalConfig = {
         de: 'Mit einer Seite verknüpfen',
       },
       admin: {
-        position: 'sidebar', // Optional: place it in the sidebar
+        position: 'sidebar', // REMOVED: In v3.x, useAsTitle goes on the 'pages' collection config, not here.
       },
     },
     {
