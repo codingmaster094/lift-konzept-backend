@@ -9,6 +9,7 @@ import VorteileSection from '@/app/components/VorteileSection/config'
 import StepsSection from '@/app/components/StepsSection/config'
 import FaqSection from '@/app/components/FaqSection/config'
 import CtaSection from '@/app/components/CtaSection/config'
+import { SEO } from '@/app/components/SEO/config'
 
 export const HomePage: GlobalConfig = {
   slug: 'home',
@@ -123,6 +124,13 @@ export const HomePage: GlobalConfig = {
             de: '',
           },
           fields: [CtaSection],
+        },
+        {
+          label: {
+            en: 'SEO',
+            de: 'SEO',
+          },
+          fields: [SEO],
         },
       ],
     },

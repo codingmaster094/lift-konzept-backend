@@ -6,6 +6,7 @@ import { revalidateTreppenlifte } from './hooks/revalidateTreppenlifte'
 import TreppenliftAdvisor from '@/app/components/TreppenliftAdvisor/config'
 import CtaSection from '@/app/components/CtaSection/config'
 import { TreppenliftGallery } from '@/app/components/TreppenliftGallery/config'
+import { SEO } from '@/app/components/SEO/config'
 
 export const TreppenliftePage: GlobalConfig = {
   slug: 'treppenlifte',
@@ -100,6 +101,13 @@ export const TreppenliftePage: GlobalConfig = {
           },
           fields: [TreppenliftGallery],
         },
+        {
+                  label: {
+                    en: 'SEO',
+                    de: 'SEO',
+                  },
+                  fields: [SEO],
+                },
       ],
     },
     {

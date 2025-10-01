@@ -2,6 +2,7 @@ import type { GlobalConfig } from 'payload'
 import slugify from 'slugify'
 import { revalidateDatenschutzerklärung } from './hooks/revalidateDatenschutzerklärung'
 import { Contents } from '@/app/components/contents/config'
+import { SEO } from '@/app/components/SEO/config'
 
 export const Datenschutzerklärung: GlobalConfig = {
   slug: 'datenschutzerklarung',
@@ -68,6 +69,13 @@ export const Datenschutzerklärung: GlobalConfig = {
           },
           fields: [Contents],
         },
+        {
+                  label: {
+                    en: 'SEO',
+                    de: 'SEO',
+                  },
+                  fields: [SEO],
+                },
       ],
     },
     {

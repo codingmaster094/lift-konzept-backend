@@ -1174,6 +1174,26 @@ export interface Home {
       target?: ('_self' | '_blank') | null;
     };
   };
+  seo?: {
+    meta?: {
+      title?: string | null;
+      description?: string | null;
+      /**
+       * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+       */
+      image?: (string | null) | Media;
+      canonicalUrl?: string | null;
+    };
+    structuredData?:
+      | {
+          [k: string]: unknown;
+        }
+      | unknown[]
+      | string
+      | number
+      | boolean
+      | null;
+  };
   publishedAt?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -1961,6 +1981,19 @@ export interface HomeSelect<T extends boolean = true> {
               url?: T;
               target?: T;
             };
+      };
+  seo?:
+    | T
+    | {
+        meta?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              image?: T;
+              canonicalUrl?: T;
+            };
+        structuredData?: T;
       };
   publishedAt?: T;
   updatedAt?: T;

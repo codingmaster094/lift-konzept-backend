@@ -4,6 +4,7 @@ import { Hero } from '@/app/components/Hero/config'
 import { CompanyLogo } from '@/app/components/comapntLogos/config'
 import { revalidateTrappenlift_ratgeber } from './hooks/revalidateTrappenlift_ratgebere'
 import CtaSection from '@/app/components/CtaSection/config'
+import { SEO } from '@/app/components/SEO/config'
 
 export const Treppenlifte_Ratgeber: GlobalConfig = {
   slug: 'treppenlifte-ratgeber',
@@ -84,6 +85,13 @@ export const Treppenlifte_Ratgeber: GlobalConfig = {
           },
           fields: [CtaSection],
         },
+        {
+                  label: {
+                    en: 'SEO',
+                    de: 'SEO',
+                  },
+                  fields: [SEO],
+                },
       ],
     },
     {

@@ -6,6 +6,7 @@ import { KostenEinesSection } from '@/app/components/KostenEinesSection/config'
 import CtaSection from '@/app/components/CtaSection/config'
 import { revalidatekosten_finanzierung } from './hooks/revalidatekosten&finanzierung'
 import FinanzierungSection from '@/app/components/FinanzierungSection/config'
+import { SEO } from '@/app/components/SEO/config'
 
 export const kosten_finanzierung: GlobalConfig = {
   slug: 'kosten-finanzierung',
@@ -100,6 +101,13 @@ export const kosten_finanzierung: GlobalConfig = {
           },
           fields: [CtaSection],
         },
+        {
+                  label: {
+                    en: 'SEO',
+                    de: 'SEO',
+                  },
+                  fields: [SEO],
+                },
       ],
     },
     {
