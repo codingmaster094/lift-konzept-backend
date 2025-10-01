@@ -304,15 +304,6 @@ export interface Post {
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
-    structuredData?:
-      | {
-          [k: string]: unknown;
-        }
-      | unknown[]
-      | string
-      | number
-      | boolean
-      | null;
   };
   publishedDate?: string | null;
   updatedAt: string;
@@ -516,15 +507,6 @@ export interface Ratgeber {
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
-    structuredData?:
-      | {
-          [k: string]: unknown;
-        }
-      | unknown[]
-      | string
-      | number
-      | boolean
-      | null;
   };
   publishedDate?: string | null;
   updatedAt: string;
@@ -743,7 +725,6 @@ export interface PostsSelect<T extends boolean = true> {
               following?: T;
               canonicalUrl?: T;
             };
-        structuredData?: T;
       };
   publishedDate?: T;
   updatedAt?: T;
@@ -886,7 +867,6 @@ export interface RatgeberSelect<T extends boolean = true> {
               following?: T;
               canonicalUrl?: T;
             };
-        structuredData?: T;
       };
   publishedDate?: T;
   updatedAt?: T;
@@ -1261,15 +1241,6 @@ export interface Home {
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
-    structuredData?:
-      | {
-          [k: string]: unknown;
-        }
-      | unknown[]
-      | string
-      | number
-      | boolean
-      | null;
   };
   publishedAt?: string | null;
   updatedAt?: string | null;
@@ -1434,15 +1405,6 @@ export interface Treppenlifte {
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
-    structuredData?:
-      | {
-          [k: string]: unknown;
-        }
-      | unknown[]
-      | string
-      | number
-      | boolean
-      | null;
   };
   publishedAt?: string | null;
   updatedAt?: string | null;
@@ -1659,15 +1621,6 @@ export interface KostenFinanzierung {
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
-    structuredData?:
-      | {
-          [k: string]: unknown;
-        }
-      | unknown[]
-      | string
-      | number
-      | boolean
-      | null;
   };
   publishedAt?: string | null;
   updatedAt?: string | null;
@@ -1779,15 +1732,6 @@ export interface TreppenlifteRatgeber {
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
-    structuredData?:
-      | {
-          [k: string]: unknown;
-        }
-      | unknown[]
-      | string
-      | number
-      | boolean
-      | null;
   };
   publishedAt?: string | null;
   updatedAt?: string | null;
@@ -1836,15 +1780,6 @@ export interface Impressum {
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
-    structuredData?:
-      | {
-          [k: string]: unknown;
-        }
-      | unknown[]
-      | string
-      | number
-      | boolean
-      | null;
   };
   publishedAt?: string | null;
   updatedAt?: string | null;
@@ -1893,15 +1828,6 @@ export interface Datenschutzerklarung {
       following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
-    structuredData?:
-      | {
-          [k: string]: unknown;
-        }
-      | unknown[]
-      | string
-      | number
-      | boolean
-      | null;
   };
   publishedAt?: string | null;
   updatedAt?: string | null;
@@ -2189,7 +2115,6 @@ export interface HomeSelect<T extends boolean = true> {
               following?: T;
               canonicalUrl?: T;
             };
-        structuredData?: T;
       };
   publishedAt?: T;
   updatedAt?: T;
@@ -2319,7 +2244,6 @@ export interface TreppenlifteSelect<T extends boolean = true> {
               following?: T;
               canonicalUrl?: T;
             };
-        structuredData?: T;
       };
   publishedAt?: T;
   updatedAt?: T;
@@ -2461,7 +2385,6 @@ export interface KostenFinanzierungSelect<T extends boolean = true> {
               following?: T;
               canonicalUrl?: T;
             };
-        structuredData?: T;
       };
   publishedAt?: T;
   updatedAt?: T;
@@ -2562,7 +2485,6 @@ export interface TreppenlifteRatgeberSelect<T extends boolean = true> {
               following?: T;
               canonicalUrl?: T;
             };
-        structuredData?: T;
       };
   publishedAt?: T;
   updatedAt?: T;
@@ -2600,7 +2522,6 @@ export interface ImpressumSelect<T extends boolean = true> {
               following?: T;
               canonicalUrl?: T;
             };
-        structuredData?: T;
       };
   publishedAt?: T;
   updatedAt?: T;
@@ -2638,7 +2559,6 @@ export interface DatenschutzerklarungSelect<T extends boolean = true> {
               following?: T;
               canonicalUrl?: T;
             };
-        structuredData?: T;
       };
   publishedAt?: T;
   updatedAt?: T;

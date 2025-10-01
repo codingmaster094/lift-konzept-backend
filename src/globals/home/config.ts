@@ -33,14 +33,18 @@ export const HomePage: GlobalConfig = {
     {
       name: 'author',
       type: 'relationship',
-      relationTo: 'users', // or 'authors' if you have a separate authors collection
-      hasMany: false, // single author
+      relationTo: 'users',
+      hasMany: false,
       label: {
         en: 'Author',
         de: 'Autor',
       },
+      // 🐛 THE FIX: Set defaultDepth to 1 to force population
+      // This ensures the related 'users' document, including the email, is fetched
+      // even if the main query uses depth=0.
+      defaultDepth: 1,
       admin: {
-        position: 'sidebar', // shows in the sidebar
+        position: 'sidebar',
       },
     },
     {
@@ -92,49 +96,49 @@ export const HomePage: GlobalConfig = {
         {
           label: {
             en: 'company Logo',
-            de: '',
+            de: 'Unternehmenslogos', // Filled in missing DE label
           },
           fields: [CompanyLogo],
         },
         {
           label: {
             en: 'Experience',
-            de: '',
+            de: 'Erfahrung', // Filled in missing DE label
           },
           fields: [Experience],
         },
         {
           label: {
             en: 'Video Section',
-            de: '',
+            de: 'Video-Abschnitt', // Filled in missing DE label
           },
           fields: [VideoSection],
         },
         {
           label: {
             en: 'Vorteile Section',
-            de: '',
+            de: 'Vorteile-Abschnitt', // Filled in missing DE label
           },
           fields: [VorteileSection],
         },
         {
           label: {
             en: 'Steps Section',
-            de: '',
+            de: 'Schritte-Abschnitt', // Filled in missing DE label
           },
           fields: [StepsSection],
         },
         {
           label: {
             en: 'Faq Section',
-            de: '',
+            de: 'FAQ-Abschnitt', // Filled in missing DE label
           },
           fields: [FaqSection],
         },
         {
           label: {
             en: 'CTA Section',
-            de: '',
+            de: 'CTA-Abschnitt', // Filled in missing DE label
           },
           fields: [CtaSection],
         },
