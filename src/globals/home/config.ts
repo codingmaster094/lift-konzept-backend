@@ -39,10 +39,6 @@ export const HomePage: GlobalConfig = {
         en: 'Author',
         de: 'Autor',
       },
-      // 🐛 THE FIX: Set defaultDepth to 1 to force population
-      // This ensures the related 'users' document, including the email, is fetched
-      // even if the main query uses depth=0.
-      defaultDepth: 1,
       admin: {
         position: 'sidebar',
       },
