@@ -1,6 +1,7 @@
 import { CompanyLogo } from '@/app/components/comapntLogos/config'
 import CtaSection from '@/app/components/CtaSection/config'
 import { Hero } from '@/app/components/Hero/config'
+import { SEO } from '@/app/components/SEO/config'
 import type { CollectionConfig } from 'payload'
 import slugify from 'slugify'
 
@@ -102,6 +103,13 @@ export const Posts: CollectionConfig = {
           },
           fields: [CtaSection],
         },
+        {
+                  label: {
+                    en: 'SEO',
+                    de: 'SEO',
+                  },
+                  fields: [SEO],
+                },
       ],
     },
     {

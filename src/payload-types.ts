@@ -1344,6 +1344,26 @@ export interface Treppenlifte {
         }[]
       | null;
   };
+  seo?: {
+    meta?: {
+      title?: string | null;
+      description?: string | null;
+      /**
+       * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+       */
+      image?: (string | null) | Media;
+      canonicalUrl?: string | null;
+    };
+    structuredData?:
+      | {
+          [k: string]: unknown;
+        }
+      | unknown[]
+      | string
+      | number
+      | boolean
+      | null;
+  };
   publishedAt?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -1546,6 +1566,26 @@ export interface KostenFinanzierung {
       target?: ('_self' | '_blank') | null;
     };
   };
+  seo?: {
+    meta?: {
+      title?: string | null;
+      description?: string | null;
+      /**
+       * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+       */
+      image?: (string | null) | Media;
+      canonicalUrl?: string | null;
+    };
+    structuredData?:
+      | {
+          [k: string]: unknown;
+        }
+      | unknown[]
+      | string
+      | number
+      | boolean
+      | null;
+  };
   publishedAt?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -1643,6 +1683,26 @@ export interface TreppenlifteRatgeber {
       target?: ('_self' | '_blank') | null;
     };
   };
+  seo?: {
+    meta?: {
+      title?: string | null;
+      description?: string | null;
+      /**
+       * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+       */
+      image?: (string | null) | Media;
+      canonicalUrl?: string | null;
+    };
+    structuredData?:
+      | {
+          [k: string]: unknown;
+        }
+      | unknown[]
+      | string
+      | number
+      | boolean
+      | null;
+  };
   publishedAt?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -1677,6 +1737,26 @@ export interface Impressum {
     type?: ('none' | 'highImpact' | 'mediumImpact' | 'lowImpact') | null;
     media?: (string | null) | Media;
   };
+  seo?: {
+    meta?: {
+      title?: string | null;
+      description?: string | null;
+      /**
+       * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+       */
+      image?: (string | null) | Media;
+      canonicalUrl?: string | null;
+    };
+    structuredData?:
+      | {
+          [k: string]: unknown;
+        }
+      | unknown[]
+      | string
+      | number
+      | boolean
+      | null;
+  };
   publishedAt?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -1710,6 +1790,26 @@ export interface Datenschutzerklarung {
     Featured_image?: (string | null) | Media;
     type?: ('none' | 'highImpact' | 'mediumImpact' | 'lowImpact') | null;
     media?: (string | null) | Media;
+  };
+  seo?: {
+    meta?: {
+      title?: string | null;
+      description?: string | null;
+      /**
+       * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+       */
+      image?: (string | null) | Media;
+      canonicalUrl?: string | null;
+    };
+    structuredData?:
+      | {
+          [k: string]: unknown;
+        }
+      | unknown[]
+      | string
+      | number
+      | boolean
+      | null;
   };
   publishedAt?: string | null;
   updatedAt?: string | null;
@@ -2109,6 +2209,19 @@ export interface TreppenlifteSelect<T extends boolean = true> {
               id?: T;
             };
       };
+  seo?:
+    | T
+    | {
+        meta?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              image?: T;
+              canonicalUrl?: T;
+            };
+        structuredData?: T;
+      };
   publishedAt?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -2235,6 +2348,19 @@ export interface KostenFinanzierungSelect<T extends boolean = true> {
               target?: T;
             };
       };
+  seo?:
+    | T
+    | {
+        meta?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              image?: T;
+              canonicalUrl?: T;
+            };
+        structuredData?: T;
+      };
   publishedAt?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -2320,6 +2446,19 @@ export interface TreppenlifteRatgeberSelect<T extends boolean = true> {
               target?: T;
             };
       };
+  seo?:
+    | T
+    | {
+        meta?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              image?: T;
+              canonicalUrl?: T;
+            };
+        structuredData?: T;
+      };
   publishedAt?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -2342,6 +2481,19 @@ export interface ImpressumSelect<T extends boolean = true> {
         type?: T;
         media?: T;
       };
+  seo?:
+    | T
+    | {
+        meta?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              image?: T;
+              canonicalUrl?: T;
+            };
+        structuredData?: T;
+      };
   publishedAt?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -2363,6 +2515,19 @@ export interface DatenschutzerklarungSelect<T extends boolean = true> {
         Featured_image?: T;
         type?: T;
         media?: T;
+      };
+  seo?:
+    | T
+    | {
+        meta?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              image?: T;
+              canonicalUrl?: T;
+            };
+        structuredData?: T;
       };
   publishedAt?: T;
   updatedAt?: T;

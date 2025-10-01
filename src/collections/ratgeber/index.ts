@@ -5,6 +5,7 @@ import CtaSection from '@/app/components/CtaSection/config'
 import FaqSection from '@/app/components/FaqSection/config'
 import { Hero } from '@/app/components/Hero/config'
 import { richTextData } from '@/app/components/richText/config'
+import { SEO } from '@/app/components/SEO/config'
 import type { CollectionConfig } from 'payload'
 import slugify from 'slugify'
 
@@ -134,6 +135,13 @@ export const Ratgeber: CollectionConfig = {
           },
           fields: [FaqSection],
         },
+        {
+                  label: {
+                    en: 'SEO',
+                    de: 'SEO',
+                  },
+                  fields: [SEO],
+                },
       ],
     },
     {
