@@ -25,6 +25,7 @@ import { de } from '@payloadcms/translations/languages/de'
 import { Impressum } from './globals/impressum/config'
 import { Datenschutzerklärung } from './globals/datenschutzerklärung/config'
 import { Robots } from './globals/robots/config'
+import { Pages } from './collections/Pages'
 
 // __dirname fix for ESM
 const filename = fileURLToPath(import.meta.url)
@@ -48,7 +49,7 @@ export default buildConfig({
     },
   },
   cors: ['https://lift-konzept-backend.vercel.app'],
-  collections: [Users, Media, Posts, Ratgeber],
+  collections: [Pages, Users, Media, Posts, Ratgeber],
   globals: [
     Header,
     Footer,
