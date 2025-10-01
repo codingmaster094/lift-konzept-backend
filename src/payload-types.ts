@@ -1185,6 +1185,7 @@ export interface Home {
 export interface Treppenlifte {
   id: string;
   title?: string | null;
+  relatedPage?: (string | null) | Page;
   slug: string;
   hero?: {
     heroImage?: (string | null) | Media;
@@ -1334,6 +1335,7 @@ export interface Treppenlifte {
 export interface KostenFinanzierung {
   id: string;
   title?: string | null;
+  relatedPage?: (string | null) | Page;
   slug: string;
   hero?: {
     heroImage?: (string | null) | Media;
@@ -1535,6 +1537,7 @@ export interface KostenFinanzierung {
 export interface TreppenlifteRatgeber {
   id: string;
   title?: string | null;
+  relatedPage?: (string | null) | Page;
   slug: string;
   hero?: {
     heroImage?: (string | null) | Media;
@@ -1631,6 +1634,7 @@ export interface TreppenlifteRatgeber {
 export interface Impressum {
   id: string;
   title?: string | null;
+  relatedPage?: (string | null) | Page;
   slug: string;
   contents?: {
     Gutenberg?: {
@@ -1664,6 +1668,7 @@ export interface Impressum {
 export interface Datenschutzerklarung {
   id: string;
   title?: string | null;
+  relatedPage?: (string | null) | Page;
   slug: string;
   contents?: {
     Gutenberg?: {
@@ -1696,6 +1701,7 @@ export interface Datenschutzerklarung {
  */
 export interface Robot {
   id: string;
+  relatedPage?: (string | null) | Page;
   robots?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -1967,6 +1973,7 @@ export interface HomeSelect<T extends boolean = true> {
  */
 export interface TreppenlifteSelect<T extends boolean = true> {
   title?: T;
+  relatedPage?: T;
   slug?: T;
   hero?:
     | T
@@ -2080,6 +2087,7 @@ export interface TreppenlifteSelect<T extends boolean = true> {
  */
 export interface KostenFinanzierungSelect<T extends boolean = true> {
   title?: T;
+  relatedPage?: T;
   slug?: T;
   hero?:
     | T
@@ -2205,6 +2213,7 @@ export interface KostenFinanzierungSelect<T extends boolean = true> {
  */
 export interface TreppenlifteRatgeberSelect<T extends boolean = true> {
   title?: T;
+  relatedPage?: T;
   slug?: T;
   hero?:
     | T
@@ -2289,6 +2298,7 @@ export interface TreppenlifteRatgeberSelect<T extends boolean = true> {
  */
 export interface ImpressumSelect<T extends boolean = true> {
   title?: T;
+  relatedPage?: T;
   slug?: T;
   contents?:
     | T
@@ -2310,6 +2320,7 @@ export interface ImpressumSelect<T extends boolean = true> {
  */
 export interface DatenschutzerklarungSelect<T extends boolean = true> {
   title?: T;
+  relatedPage?: T;
   slug?: T;
   contents?:
     | T
@@ -2330,6 +2341,7 @@ export interface DatenschutzerklarungSelect<T extends boolean = true> {
  * via the `definition` "robots_select".
  */
 export interface RobotsSelect<T extends boolean = true> {
+  relatedPage?: T;
   robots?: T;
   updatedAt?: T;
   createdAt?: T;
