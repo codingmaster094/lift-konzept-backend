@@ -30,6 +30,19 @@ export const HomePage: GlobalConfig = {
       },
     },
     {
+      name: 'relatedPage', // Choose a descriptive name
+      type: 'relationship',
+      relationTo: 'pages', // This must match the slug of the collection you're linking to
+      maxDepth: 0, // Optional: useful if you only need the ID and slug
+      label: {
+        en: 'Link to a Page',
+        de: 'Mit einer Seite verknüpfen',
+      },
+      admin: {
+        position: 'sidebar', // Optional: place it in the sidebar
+      },
+    },
+    {
       name: 'slug',
       type: 'text',
       required: true,

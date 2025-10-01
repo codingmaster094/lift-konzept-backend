@@ -960,6 +960,7 @@ export interface Menu {
 export interface Home {
   id: string;
   title?: string | null;
+  relatedPage?: (string | null) | Page;
   slug: string;
   hero?: {
     heroImage?: (string | null) | Media;
@@ -1816,6 +1817,7 @@ export interface MenusSelect<T extends boolean = true> {
  */
 export interface HomeSelect<T extends boolean = true> {
   title?: T;
+  relatedPage?: T;
   slug?: T;
   hero?:
     | T
