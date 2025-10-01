@@ -300,6 +300,8 @@ export interface Post {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      indexing?: ('index' | 'noindex') | null;
+      following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
     structuredData?:
@@ -510,6 +512,8 @@ export interface Ratgeber {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      indexing?: ('index' | 'noindex') | null;
+      following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
     structuredData?:
@@ -735,6 +739,8 @@ export interface PostsSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              indexing?: T;
+              following?: T;
               canonicalUrl?: T;
             };
         structuredData?: T;
@@ -876,6 +882,8 @@ export interface RatgeberSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              indexing?: T;
+              following?: T;
               canonicalUrl?: T;
             };
         structuredData?: T;
@@ -1249,6 +1257,8 @@ export interface Home {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      indexing?: ('index' | 'noindex') | null;
+      following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
     structuredData?:
@@ -1420,6 +1430,8 @@ export interface Treppenlifte {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      indexing?: ('index' | 'noindex') | null;
+      following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
     structuredData?:
@@ -1643,6 +1655,8 @@ export interface KostenFinanzierung {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      indexing?: ('index' | 'noindex') | null;
+      following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
     structuredData?:
@@ -1761,6 +1775,8 @@ export interface TreppenlifteRatgeber {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      indexing?: ('index' | 'noindex') | null;
+      following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
     structuredData?:
@@ -1816,6 +1832,8 @@ export interface Impressum {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      indexing?: ('index' | 'noindex') | null;
+      following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
     structuredData?:
@@ -1871,6 +1889,8 @@ export interface Datenschutzerklarung {
        * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
        */
       image?: (string | null) | Media;
+      indexing?: ('index' | 'noindex') | null;
+      following?: ('follow' | 'nofollow') | null;
       canonicalUrl?: string | null;
     };
     structuredData?:
@@ -2165,6 +2185,8 @@ export interface HomeSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              indexing?: T;
+              following?: T;
               canonicalUrl?: T;
             };
         structuredData?: T;
@@ -2293,6 +2315,8 @@ export interface TreppenlifteSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              indexing?: T;
+              following?: T;
               canonicalUrl?: T;
             };
         structuredData?: T;
@@ -2433,6 +2457,8 @@ export interface KostenFinanzierungSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              indexing?: T;
+              following?: T;
               canonicalUrl?: T;
             };
         structuredData?: T;
@@ -2532,6 +2558,8 @@ export interface TreppenlifteRatgeberSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              indexing?: T;
+              following?: T;
               canonicalUrl?: T;
             };
         structuredData?: T;
@@ -2568,6 +2596,8 @@ export interface ImpressumSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              indexing?: T;
+              following?: T;
               canonicalUrl?: T;
             };
         structuredData?: T;
@@ -2604,6 +2634,8 @@ export interface DatenschutzerklarungSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
+              indexing?: T;
+              following?: T;
               canonicalUrl?: T;
             };
         structuredData?: T;
