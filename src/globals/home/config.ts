@@ -61,8 +61,6 @@ export const HomePage: GlobalConfig = {
         en: 'Author',
         de: 'Autor',
       },
-      // Removed defaultDepth: 1 to resolve TypeScript error 2353.
-      // The manual populateAuthor hook ensures the field is populated.
       admin: {
         position: 'sidebar',
       },
@@ -185,7 +183,6 @@ export const HomePage: GlobalConfig = {
   ],
   hooks: {
     afterChange: [revalidateHome],
-    // 🛡️ THE FAILSAFE FIX: Manually populate the author after the database read
     afterRead: [populateAuthor],
   },
 }
