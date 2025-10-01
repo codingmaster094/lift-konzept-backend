@@ -5,7 +5,9 @@ export const Pages: CollectionConfig = {
   access: {
     read: () => true,
   },
-
+  admin: {
+    useAsTitle: 'title', // <-- **THIS IS THE CRITICAL LINE**
+  },
   fields: [
     {
       name: 'title',
